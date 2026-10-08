@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>가 · 신체활동의 건강 효과</title>
+<meta name="description" content="체육1 건강 홈트레이닝 — 학습지 가. 운동 자극이 적응으로 이어지는 과정, 다섯 계통의 변화, 마음과 관계의 효과.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;800;900&family=IBM+Plex+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="deck.css">
+<style>
+  .qcards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .qcard { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 12px; box-shadow: var(--shadow); }
+  .qcard .qn { font-family: var(--f-mono); font-weight: 700; font-size: 18px; color: #fff; background: var(--coral); border-radius: 8px; padding: 2px 10px; align-self: flex-start; }
+  .qcard p { font-size: 23px; font-weight: 700; line-height: 1.45; }
+  .portrait .qcards { grid-template-columns: 1fr; }
+  .sys { gap: 10px; }
+  .sys .chain { font-size: 18px; line-height: 1.55; }
+  .sys .chain b { color: var(--teal-ink); }
+  .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .vs .card p { font-size: 21px; }
+  .vs .bad h4 { color: var(--coral-ink); } .vs .good h4 { color: var(--teal-ink); }
+  .portrait .vs { grid-template-columns: 1fr; }
+  .lab-grid { display: grid; grid-template-columns: 330px 1fr; gap: 20px; flex: 1; min-height: 0; }
+  .portrait .lab-grid { grid-template-columns: 1fr; }
+  .lab-grid .ctrls { display: flex; flex-direction: column; gap: 14px; }
+  .lab-grid .seg { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .lab-grid .seg .btn { font-size: 16px; padding: 10px 8px; white-space: normal; line-height: 1.3; }
+  .ro { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  #scChart { width: 100%; height: auto; display: block; }
+  #scChart .base { stroke: var(--lab-muted); stroke-dasharray: 6 7; stroke-width: 1.5; }
+  #scChart .grid { stroke: var(--lab-line); stroke-width: 1; }
+  #scChart .ln { fill: none; stroke: var(--sun); stroke-width: 4; stroke-linejoin: round; }
+  #scChart .ses { fill: var(--coral); }
+  #scChart .now { fill: var(--sun); }
+  #scChart text { font-size: 14px; }
+</style>
+</head>
+<body data-title="가 · 신체활동의 건강 효과">
+<main class="viewport"><div class="stage">
+
+<!-- 1 -->
+<section class="slide title-slide" data-sec="시작" data-label="신체활동의 건강 효과 매커니즘">
+  <svg class="art" viewBox="0 0 470 300" aria-hidden="true">
+    <line class="a-base" x1="0" y1="200" x2="470" y2="200"/>
+    <path class="a-line" d="M6 200 L70 200 C95 200 100 262 128 264 C162 266 176 162 214 150 L232 150 C250 150 256 214 282 216 C316 218 332 104 372 96 L462 96"/>
+    <circle class="a-dot" cx="214" cy="150" r="8"/><circle class="a-dot" cx="372" cy="96" r="8"/>
+    <text class="a-lbl" x="70" y="186">운동 자극</text>
+    <text class="a-lbl" x="320" y="78">초과회복 · 적응</text>
+  </svg>
+  <span class="pill">체육1 · 건강 홈트레이닝 프로젝트</span>
+  <h1>신체활동의 건강 효과<br><span class="y">매커니즘</span></h1>
+  <p class="sub">운동은 왜, 어떻게 우리 몸을 바꾸는가?</p>
+  <p class="std">학습지 가 · [12체육1-01-01] 신체활동이 건강에 영향을 미치는 기전과 효과를 탐구한다.</p>
+  <span class="letter" aria-hidden="true">가</span>
+  <aside class="notes"><p>오늘은 5~10분 정도 짧게 개념을 정리하고 학습지 가를 작성합니다.</p><p>"운동을 하면 몸이 좋아진다"는 말은 누구나 압니다. 오늘은 그 말을 과학적으로 설명해 보는 시간입니다. 왜, 어떻게 좋아지는지 순서대로 말할 수 있으면 오늘 수업은 성공입니다.</p></aside>
+</section>
+
+<!-- 2 -->
+<section class="slide" data-sec="시작">
+  <header class="sh rise"><span class="sec"><b>0</b>학습지 지도</span><h2>학습지 가, 다섯 문항이 <em>이 순서</em>로 나옵니다</h2><p class="lead">장 번호를 보고 필요한 곳으로 바로 가도 됩니다.</p></header>
+  <div class="wsmap rise">
+    <div class="it"><b>1번</b><span>자극에서 적응까지 빈칸 채우기<small>핵심 원리 · 5~8장</small></span></div>
+    <div class="it"><b>2번</b><span>다섯 계통에서 일어나는 변화<small>자연과학적 측면 · 9~11장</small></span></div>
+    <div class="it"><b>3번</b><span>마음과 관계에 주는 효과 (두 문장 이상)<small>사회과학적 측면 · 12~13장</small></span></div>
+    <div class="it"><b>4번</b><span>홈트레이닝 8동작 중 3가지 정리<small>동작 연결 · 14~15장</small></span></div>
+    <div class="it"><b>5번</b><span>오늘의 한 문장 정리<small>마무리 · 17장</small></span></div>
+    <div class="it"><b>확인</b><span>개념 확인 문제 3개<small>16장</small></span></div>
+  </div>
+  <div class="memo rise"><span class="lab">핵심 아이디어</span><p>건강은 자신의 건강 수준을 진단하고, 신체활동을 계획적으로 실천함으로써 증진된다.</p></div>
+  <aside class="notes"><p>학습지 가의 다섯 문항이 오늘 강의 순서와 그대로 같습니다. 학습지를 옆에 펴 두고 따라오세요.</p></aside>
+</section>
+
+<!-- 3 -->
+<section class="slide" data-sec="시작">
+  <header class="sh rise"><span class="sec"><b>0</b>오늘의 학습 목표</span><h2>이 세 가지를 설명할 수 있으면 학습지를 다 쓸 수 있습니다</h2></header>
+  <div class="cols c3 body">
+    <div class="card step"><h3><span class="dot coral"></span>과정</h3><p>운동 자극이 <strong>적응</strong>으로 이어지는 과정을 순서대로 말할 수 있다.</p><p class="foot">학습지 1번</p></div>
+    <div class="card step"><h3><span class="dot"></span>몸</h3><p>운동이 <strong>심장·폐·근육·대사·뇌</strong>에 주는 변화를 예로 들 수 있다.</p><p class="foot">학습지 2번</p></div>
+    <div class="card step"><h3><span class="dot violet"></span>마음과 관계</h3><p>운동이 마음과 관계에 주는 효과를 <strong>두 문장</strong>으로 쓸 수 있다.</p><p class="foot">학습지 3번</p></div>
+  </div>
+  <aside class="notes"><p>세 가지 목표는 학습지 1~3번 문항과 그대로 연결됩니다. 목표를 먼저 읽어 주고, 수업이 끝날 때 다시 확인하겠다고 예고합니다.</p></aside>
+</section>
+
+<!-- 4 -->
+<section class="slide" data-sec="시작">
+  <header class="sh rise"><span class="sec"><b>0</b>생각 열기</span><h2>똑같이 스쿼트를 해도 어떤 사람은 더 빨리 튼튼해진다. 왜 그럴까?</h2></header>
+  <div class="qcards">
+    <div class="qcard step"><span class="qn">Q1</span><p>운동을 하면 왜 몸이 달라질까?</p></div>
+    <div class="qcard step"><span class="qn">Q2</span><p>운동한 다음 날 근육이 아픈 것은 몸이 망가진 신호일까, 좋아지는 신호일까?</p></div>
+    <div class="qcard step"><span class="qn">Q3</span><p>운동을 한 달 쉬면 왜 다시 힘들어질까?</p></div>
+  </div>
+  <div class="card flat step" style="flex-direction:row;align-items:center;gap:22px;flex-wrap:wrap">
+    <p style="font-weight:700;flex:1 1 260px">옆 친구와 30초 이야기해 봅시다.</p>
+    <div class="timer" data-secs="30" style="flex:1 1 380px"></div>
+  </div>
+  <aside class="notes"><p>정답을 바로 말하지 않습니다. 세 질문 모두 다음 장의 "초과회복" 개념 하나로 설명된다는 점만 예고하면 집중도가 올라갑니다.</p><p>타이머를 눌러 30초 동안 짝과 이야기하게 합니다.</p></aside>
+</section>
+
+<!-- 5 -->
+<section class="slide" data-sec="1 핵심 원리">
+  <header class="sh rise"><div class="row"><span class="sec"><b>1</b>핵심 원리</span><span class="ws">학습지 1번</span></div><h2>자극에서 적응까지, 다섯 단계</h2><p class="lead">학습지 1번 빈칸의 흐름입니다. 먼저 떠올려 보고 넘기세요.</p></header>
+  <div class="flow" style="--n:5">
+    <div><div class="chev">운동 자극</div><p class="desc">평소보다 조금 더 힘든 부하를 준다</p></div>
+    <div><div class="chev">항상성 붕괴</div><p class="desc">몸의 균형이 일시적으로 깨진다</p></div>
+    <div><div class="chev"><span class="blank">피로·손상</span></div><p class="desc">근섬유 미세손상, 에너지 고갈</p></div>
+    <div><div class="chev coral"><span class="blank">회복·초과회복</span></div><p class="desc">휴식·영양·수면으로 이전보다 더 채운다</p></div>
+    <div><div class="chev teal"><span class="blank">적응</span></div><p class="desc">근력·심폐 기능이 한 단계 올라간다</p></div>
+  </div>
+  <div class="memo step"><span class="lab">기억할 한 문장</span><p>운동은 몸을 "망가뜨렸다가 더 좋게 고치는" 과정이다. 그래서 자극과 휴식이 둘 다 있어야 한다.</p></div>
+  <p class="note-line">학습지 1번 정답 : 피로·손상 → 초과회복 → 적응(기능 향상)</p>
+  <aside class="notes"><p>학생들이 학습지 1번 빈칸을 스스로 채워 본 뒤에 빈칸을 하나씩 엽니다.</p><p>4번 단계(회복·초과회복)에서 잠·식사·휴식의 중요성을 강조하세요. 운동하는 동안이 아니라 쉬는 동안 몸이 좋아진다는 점이 핵심입니다.</p></aside>
+</section>
+
+<!-- 6 -->
+<section class="slide" data-sec="1 핵심 원리">
+  <header class="sh rise"><span class="sec"><b>1</b>핵심 원리</span><h2>생각 열기의 답이 모두 이 흐름 안에 있다</h2></header>
+  <div class="cols c3 body">
+    <div class="card"><h4><span class="dot coral"></span>Q1 왜 달라질까?</h4><p class="step">깨진 균형을 되찾으면서 몸이 <span class="blank">이전보다 더</span> 채워 두기 때문이다. 다음 자극에 대비하는 것이다.</p></div>
+    <div class="card"><h4><span class="dot coral"></span>Q2 근육통은?</h4><p class="step">근섬유의 <span class="blank">미세손상</span>이 회복되는 과정의 신호다. 다만 날카로운 통증, 관절 통증은 부상 신호이므로 멈춘다.</p></div>
+    <div class="card"><h4><span class="dot coral"></span>Q3 한 달 쉬면?</h4><p class="step">새로운 자극이 없으면 올라갔던 수준이 <span class="blank">원래대로</span> 돌아온다. 그래서 규칙적으로 해야 한다.</p></div>
+  </div>
+  <p class="note-line">근육통은 보통 하루이틀 뒤에 가장 심하고 며칠 안에 사라집니다. 일주일 넘게 가거나 붓고 열이 나면 보건실·병원에 갑니다.</p>
+  <aside class="notes"><p>Q2에서 "아프면 좋아지는 것"이라고만 정리하면 위험합니다. 근육이 뻐근한 것과 관절이 찌르듯 아픈 것을 구분하게 하세요. 안전 수업(학습지 라)과 연결됩니다.</p></aside>
+</section>
+
+<!-- 7 -->
+<section class="slide" data-sec="1 핵심 원리">
+  <header class="sh rise"><div class="row"><span class="sec"><b>1</b>초과회복 그래프</span><span class="ws">학습지 1번</span></div><h2>운동 직후엔 떨어졌다가, 회복하며 <em>이전보다 높아진다</em></h2></header>
+  <div class="split">
+    <svg class="chart" id="scStatic" role="img" aria-label="초과회복 그래프: 운동 전 100, 운동 직후 84, 24시간 후 98, 48시간 후 109, 휴식만 길어질 때 100"></svg>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="card flat step"><h4><span class="dot navy"></span>운동 직후</h4><p>체력이 잠깐 떨어진다. 지치는 것은 정상이다.</p></div>
+      <div class="card flat step"><h4><span class="dot coral"></span>48시간 후</h4><p>이전 수준을 넘어선다. <strong>이때 다시 운동하면 최고!</strong></p></div>
+      <div class="card flat step"><h4><span class="dot sun"></span>너무 오래 쉬면</h4><p>올라갔던 수준이 원래대로 돌아온다.</p></div>
+    </div>
+  </div>
+  <p class="tiny">운동 전 체력을 100으로 둔 개념 그래프입니다. 실제 회복 시간은 운동 강도와 사람에 따라 다릅니다.</p>
+  <aside class="notes"><p>생각 열기 Q2, Q3의 답이 이 그래프에 있습니다.</p><p>"주 2~3회 규칙적으로"라는 권고가 왜 나왔는지 그래프로 설명해 주세요. 48시간 뒤 꼭대기에서 다시 자극을 주면 그 높이에서 다시 출발할 수 있습니다. 다음 장에서 직접 돌려 봅니다.</p></aside>
+</section>
+
+<!-- 8 LAB -->
+<section class="slide lab-slide" data-sec="1 핵심 원리" data-label="몸속 실험실 — 초과회복 시뮬레이터">
+  <header class="sh rise"><span class="sec"><b>★</b>몸속 실험실</span><h2>언제 다시 운동하느냐가 <em>2주 뒤를 바꾼다</em></h2><p class="lead">같은 부위를 같은 강도로 운동할 때, 다음 운동까지의 간격을 골라 재생해 보세요.</p></header>
+  <div class="lab-grid">
+    <div class="ctrls">
+      <div class="panel">
+        <div class="ctl-l">다음 운동까지</div>
+        <div class="seg" id="scSeg">
+          <button type="button" class="btn" data-h="24">매일<br><span class="tiny">24시간</span></button>
+          <button type="button" class="btn on" data-h="48">이틀마다<br><span class="tiny">48시간</span></button>
+          <button type="button" class="btn" data-h="72">사흘마다<br><span class="tiny">72시간</span></button>
+          <button type="button" class="btn" data-h="168">일주일에 한 번<br><span class="tiny">7일</span></button>
+        </div>
+      </div>
+      <div class="panel ro">
+        <div class="readout"><span class="k">운동 횟수</span><span class="v" id="scN">7<small>회</small></span></div>
+        <div class="readout"><span class="k">2주 뒤 체력</span><span class="v" id="scEnd">133</span></div>
+      </div>
+      <button type="button" class="btn primary" id="scPlay">▶ 2주 재생</button>
+    </div>
+    <div class="panel" style="display:flex;flex-direction:column;gap:10px">
+      <svg id="scChart" class="int" viewBox="0 0 720 330" role="img" aria-label="2주 동안의 체력 변화 그래프"></svg>
+      <p class="lab-msg" id="scMsg"></p>
+    </div>
+  </div>
+  <p class="disclaim">운동 전 체력을 100으로 둔 모식도입니다. 원리를 보여 주는 그림이며 실제 수치가 아닙니다. 빨간 점 = 운동한 날.</p>
+  <aside class="notes"><p>먼저 "이틀마다"를 재생해 계단처럼 올라가는 모습을 봅니다. 그다음 "매일"과 "일주일에 한 번"을 눌러 비교합니다.</p><p>매일 운동이 나쁘다는 뜻이 아닙니다. 같은 부위를 같은 강도로 매일 하면 회복할 틈이 없다는 뜻입니다. 매일 하고 싶다면 상체·하체처럼 부위를 번갈아 하거나 강도를 낮춥니다.</p></aside>
+</section>
+
+<!-- 9 -->
+<section class="slide" data-sec="2 자연과학적 측면">
+  <header class="sh rise"><div class="row"><span class="sec"><b>2</b>자연과학적 측면</span><span class="ws">학습지 2번</span></div><h2>몸에서 일어나는 변화 ① 심장·폐·근육과 뼈</h2></header>
+  <div class="cols c3 body">
+    <div class="card sys"><h3><span class="dot coral"></span>심장·혈관계</h3><p class="chain">심장 근육이 두꺼워지고 <b>1회 박출량</b> 증가 → 한 번에 더 많이 내보내니 <b>안정 시 심박수 감소</b></p><p class="foot step">예방 : <span class="blank">고혈압 · 심장질환</span></p></div>
+    <div class="card sys"><h3><span class="dot"></span>호흡계</h3><p class="chain">호흡근이 발달하고 산소를 받아들이는 능력(<b>최대산소섭취량</b>)이 향상</p><p class="foot step">예방 : <span class="blank">호흡기 기능 저하</span></p></div>
+    <div class="card sys"><h3><span class="dot sun"></span>근육·뼈</h3><p class="chain">근섬유가 굵어지고, 뼈에 자극이 가해져 <b>골밀도</b>가 높아짐</p><p class="foot step">예방 : <span class="blank">근감소증 · 골다공증</span></p></div>
+  </div>
+  <aside class="notes"><p>다섯 계통을 다 외우게 하지 말고, 학습지 2번에서 각자 조사해 채우도록 안내합니다.</p><p>각 계통마다 홈트레이닝 8동작 중 어떤 동작이 관련되는지 물어보면 연결이 쉬워집니다. 예: 버피테스트·마운틴 클라이머 → 심장·호흡, 스쿼트 → 근육·뼈.</p></aside>
+</section>
+
+<!-- 10 -->
+<section class="slide" data-sec="2 자연과학적 측면">
+  <header class="sh rise"><div class="row"><span class="sec"><b>2</b>자연과학적 측면</span><span class="ws">학습지 2번</span></div><h2>몸에서 일어나는 변화 ② 대사와 뇌</h2></header>
+  <div class="cols c3 body">
+    <div class="card sys"><h3><span class="dot violet"></span>대사·호르몬</h3><p class="chain"><b>인슐린 민감성</b>이 좋아지고 혈당·혈중 지질이 조절됨</p><p class="foot step">예방 : <span class="blank">당뇨병 · 비만 · 대사증후군</span></p></div>
+    <div class="card sys"><h3><span class="dot navy"></span>뇌·신경계</h3><p class="chain"><b>BDNF</b>(뇌유래신경영양인자) 등의 분비로 신경 연결이 늘고 기억력·집중력 향상</p><p class="foot step">예방 : <span class="blank">우울증 · 인지 기능 저하</span></p></div>
+    <div class="card dark"><h3>스스로 조사하기</h3><p>위 내용을 그대로 옮기지 말고, <strong>내 몸에서 느낀 변화</strong>를 한 가지씩 덧붙여 학습지에 쓰세요.</p><p class="muted small">예: 계단을 오를 때 숨이 덜 찼다, 운동한 날 잠이 빨리 들었다</p></div>
+  </div>
+  <aside class="notes"><p>BDNF는 "뇌의 비료"라고 불리기도 합니다. 운동이 공부에도 도움이 된다는 이야기로 이어 가면 학생들이 흥미를 보입니다.</p></aside>
+</section>
+
+<!-- 11 -->
+<section class="slide" data-sec="2 자연과학적 측면">
+  <header class="sh rise"><span class="sec"><b>2</b>연결 질문</span><h2>스쿼트와 버피테스트, 어느 계통에 가장 큰 자극을 줄까?</h2></header>
+  <div class="cols body">
+    <div class="quiz mcq" data-answer="나">
+      <p class="q"><span class="qn">Q</span>스쿼트가 가장 큰 자극을 주는 계통은?</p>
+      <div class="opts">
+        <button class="opt" data-k="가">호흡계</button>
+        <button class="opt" data-k="나">근육·뼈</button>
+        <button class="opt" data-k="다">뇌·신경계</button>
+      </div>
+      <p class="fb">하체의 큰 근육(대퇴사두근·둔근)을 쓰고, 체중이 실려 뼈에도 자극이 갑니다.</p>
+    </div>
+    <div class="quiz mcq" data-answer="다">
+      <p class="q"><span class="qn">Q</span>버피테스트가 가장 큰 자극을 주는 계통은?</p>
+      <div class="opts">
+        <button class="opt" data-k="가">대사·호르몬만</button>
+        <button class="opt" data-k="나">근육·뼈만</button>
+        <button class="opt" data-k="다">심장·혈관계와 호흡계</button>
+      </div>
+      <p class="fb">전신을 빠르게 움직여 심박수와 호흡이 크게 올라갑니다. 심폐지구력 운동입니다.</p>
+    </div>
+  </div>
+  <aside class="notes"><p>정답이 하나만은 아니라는 점도 짚어 줍니다. 모든 운동은 여러 계통에 동시에 영향을 주지만, "가장 큰" 자극을 묻는 것입니다.</p></aside>
+</section>
+
+<!-- 12 -->
+<section class="slide" data-sec="3 사회과학적 측면">
+  <header class="sh rise"><div class="row"><span class="sec"><b>3</b>사회과학적 측면</span><span class="ws">학습지 3번</span></div><h2>마음과 관계 — 운동은 몸 밖에도 효과가 있다</h2></header>
+  <div class="cols c3 body">
+    <div class="card"><h3><span class="dot"></span>스트레스·불안이 줄어든다</h3><p class="small">운동 중 분비되는 <span class="blank">엔도르핀·세로토닌</span>이 기분을 안정시키고, 스트레스 호르몬(<span class="blank">코르티솔</span>) 수치를 낮춘다.</p></div>
+    <div class="card"><h3><span class="dot coral"></span>자아 존중감이 올라간다</h3><p class="small">"어제보다 한 개 더" 같은 작은 성공 경험이 쌓이면서 나도 할 수 있다는 <span class="blank">자기효능감</span>이 커진다.</p></div>
+    <div class="card"><h3><span class="dot violet"></span>관계가 넓어진다</h3><p class="small">함께 운동하고 서로 자세를 봐 주는 과정에서 협력과 배려를 배우고, <span class="blank">소속감</span>을 느낀다.</p></div>
+  </div>
+  <aside class="notes"><p>시험 대비가 아니라 자기 경험을 쓰는 문항입니다. 빈칸을 열면서 각 효과에 해당하는 내 경험을 떠올리게 합니다.</p></aside>
+</section>
+
+<!-- 13 -->
+<section class="slide" data-sec="3 사회과학적 측면">
+  <header class="sh rise"><div class="row"><span class="sec"><b>3</b>서술 요령</span><span class="ws">학습지 3번</span></div><h2>"운동은 ○○에 좋다"로 끝내지 말고, <em>내 경험</em>을 넣는다</h2><p class="lead">① 어떤 상황에서 ② 무엇이 달라졌는지 두 문장 이상</p></header>
+  <div class="vs">
+    <div class="card bad"><h4>이렇게 쓰면 부족합니다</h4><p>운동은 스트레스 해소에 좋다. 그리고 친구 관계에도 좋다.</p><p class="tiny">누구나 쓸 수 있는 문장 — 상황도 변화도 없다</p></div>
+    <div class="card good step"><h4>이렇게 쓰면 좋습니다 (예시)</h4><p>시험 기간에 저녁마다 20분씩 스쿼트와 플랭크를 했더니 잠이 빨리 들고 다음 날 덜 초조했다. 친구와 서로 플랭크 시간을 재 주면서 전보다 더 자주 이야기하게 되었다.</p></div>
+  </div>
+  <div class="card flat step"><p><strong>짝과 나누기</strong> — 내가 운동하고 나서 기분이나 관계가 달라졌던 순간을 한 가지 떠올려 짝에게 말해 봅시다.</p><div class="timer" data-secs="60"></div></div>
+  <aside class="notes"><p>발표를 한두 명 시켜 예시를 공유하면 나머지 학생들이 쉽게 씁니다. 예시 문장은 화면에 있는 그대로 베끼지 않도록 안내합니다.</p></aside>
+</section>
+
+<!-- 14 -->
+<section class="slide" data-sec="4 동작 연결">
+  <header class="sh rise"><div class="row"><span class="sec"><b>4</b>홈트레이닝 8동작으로 연결하기</span><span class="ws">학습지 4번</span></div><h2>아래 예시처럼 3가지를 골라 정리합니다</h2></header>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>선택 동작</th><th>주동근(주로 쓰는 근육)</th><th>관련 체력 요소</th><th>기대되는 건강 효과</th></tr></thead>
+      <tbody>
+        <tr><td>스쿼트</td><td>대퇴사두근 · 둔근 · 햄스트링</td><td>근력 · 근지구력</td><td>하체 근육량 ↑ → 기초대사량 증가</td></tr>
+        <tr class="step"><td>플랭크</td><td>복횡근 · 척추기립근</td><td>근지구력 · 코어 안정성</td><td>자세 개선, 허리 통증 예방</td></tr>
+        <tr class="step"><td>버피테스트</td><td>전신 (하체 + 가슴 + 코어)</td><td>심폐지구력 · 순발력</td><td>심박수 상승 → 심장·혈관 기능 향상</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="memo step"><span class="lab">팁</span><p style="font-size:21px">동작을 고를 때 "내가 가장 약하다고 느끼는 체력 요소"를 기준으로 고르면 학습지 마(실천 계획서)까지 자연스럽게 이어집니다.</p></div>
+  <aside class="notes"><p>예시 3개는 함께 읽고, 학생들은 반드시 예시와 다른 동작을 고르도록 안내합니다.</p><p>근육 이름은 완벽하지 않아도 되고 "허벅지 앞", "배"처럼 부위 수준으로 써도 인정한다고 알려 주세요.</p></aside>
+</section>
+
+<!-- 15 -->
+<section class="slide" data-sec="4 동작 연결">
+  <header class="sh rise"><div class="row"><span class="sec"><b>4</b>나머지 5가지 동작</span><span class="ws">학습지 4번</span></div><h2>예시와 <em>다른</em> 동작을 골라 직접 채워 보세요</h2></header>
+  <div class="chips" style="gap:12px">
+    <span class="chip teal" style="font-size:22px;padding:12px 22px">무릎 싯업</span>
+    <span class="chip teal" style="font-size:22px;padding:12px 22px">덤벨컬</span>
+    <span class="chip teal" style="font-size:22px;padding:12px 22px">사이드 래터럴 레이즈</span>
+    <span class="chip teal" style="font-size:22px;padding:12px 22px">마운틴 클라이머</span>
+    <span class="chip teal" style="font-size:22px;padding:12px 22px">크런치</span>
+  </div>
+  <div class="cols">
+    <details class="answer"><summary>막힐 때 힌트 — 주로 쓰는 부위</summary><div class="in">
+      <p><strong>무릎 싯업·크런치</strong> — 배 앞쪽(복직근)</p>
+      <p><strong>덤벨컬</strong> — 위팔 앞쪽(상완이두근)</p>
+      <p><strong>사이드 래터럴 레이즈</strong> — 어깨 옆쪽(삼각근)</p>
+      <p><strong>마운틴 클라이머</strong> — 코어 + 다리, 심박수가 크게 오른다</p>
+    </div></details>
+    <div class="card flat"><h4>표를 채우는 순서</h4><p class="small">① 동작을 실제로 5회 해 본다 → ② 어디가 당기는지 느낀다 → ③ 그 부위가 주동근 → ④ 힘이 드는지, 숨이 차는지로 체력 요소를 정한다</p></div>
+  </div>
+  <aside class="notes"><p>힌트는 학생들이 충분히 고민한 뒤에 엽니다. 직접 동작을 해 보며 "어디가 당기는지"를 느끼게 하는 것이 가장 좋은 방법입니다.</p></aside>
+</section>
+
+<!-- 16 -->
+<section class="slide" data-sec="확인">
+  <header class="sh rise"><span class="sec"><b>✓</b>개념 확인</span><h2>오늘 배운 것, 세 문제로 확인하기</h2></header>
+  <div class="cols c3 body">
+    <div class="quiz mcq" data-answer="나">
+      <p class="q"><span class="qn">1</span>운동 후 회복하면서 이전보다 체력이 높아지는 현상은?</p>
+      <div class="opts"><button class="opt" data-k="가">항상성</button><button class="opt" data-k="나">초과회복</button><button class="opt" data-k="다">과훈련</button></div>
+      <p class="fb">휴식·영양·수면으로 이전보다 더 채우는 단계입니다.</p>
+    </div>
+    <div class="quiz mcq" data-answer="가">
+      <p class="q"><span class="qn">2</span>운동을 한 달 쉬면 다시 힘들어지는 까닭은?</p>
+      <div class="opts"><button class="opt" data-k="가">올라갔던 수준이 원래대로 돌아와서</button><button class="opt" data-k="나">근육이 영구히 손상되어서</button><button class="opt" data-k="다">심박수가 계속 낮아져서</button></div>
+      <p class="fb">새 자극이 없으면 적응한 수준이 유지되지 않습니다. 그래서 규칙적으로 해야 합니다.</p>
+    </div>
+    <div class="quiz mcq" data-answer="다">
+      <p class="q"><span class="qn">3</span>BDNF 분비로 기억력·집중력이 좋아지는 계통은?</p>
+      <div class="opts"><button class="opt" data-k="가">호흡계</button><button class="opt" data-k="나">대사·호르몬</button><button class="opt" data-k="다">뇌·신경계</button></div>
+      <p class="fb">신경 연결이 늘어나 우울증과 인지 기능 저하 예방에도 도움이 됩니다.</p>
+    </div>
+  </div>
+  <aside class="notes"><p>손을 들어 답을 고르게 한 뒤 보기를 눌러 확인합니다. 틀린 학생이 많은 문항은 해당 장으로 돌아가 다시 봅니다(숫자 + Enter).</p></aside>
+</section>
+
+<!-- 17 -->
+<section class="slide end-slide" data-sec="마무리" data-label="오늘의 한 문장 정리">
+  <header class="sh rise"><div class="row"><span class="sec"><b>5</b>오늘의 한 문장 정리</span><span class="ws" style="border-color:var(--sun);color:var(--sun)">학습지 5번</span></div><h2>수업을 마치기 전에 스스로 완성해 봅시다</h2></header>
+  <div class="fillin"><span>"나에게 홈트레이닝이 필요한 이유는</span><input id="fill-a" type="text" placeholder="예: 앉아 있는 시간이 길어 허리가 자주 아프기" aria-label="홈트레이닝이 필요한 이유"><span>때문이다."</span></div>
+  <div class="split even">
+    <div class="card"><h4>스스로 점검</h4>
+      <ul class="checklist">
+        <li><label><input type="checkbox" id="ck-a1"> 자극 → 회복 → 적응의 흐름을 말할 수 있다</label></li>
+        <li><label><input type="checkbox" id="ck-a2"> 다섯 계통의 변화를 한 가지씩 쓸 수 있다</label></li>
+        <li><label><input type="checkbox" id="ck-a3"> 마음·관계 효과를 두 문장으로 쓸 수 있다</label></li>
+      </ul>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;justify-content:flex-end">
+      <p class="big">운동하는 동안이 아니라, 쉬는 동안 몸이 좋아진다.</p>
+      <p class="next">다음 시간 : <a href="life-cycle.html">학습지 나 — 생애 주기별 건강 관리 →</a></p>
+    </div>
+  </div>
+  <aside class="notes"><p>마무리 문장은 반드시 이유를 구체적으로 쓰게 합니다(예: 앉아 있는 시간이 길어 허리가 아프기 때문에).</p><p>남은 시간에 학습지 2·4번을 이어서 작성하도록 안내합니다.</p></aside>
+</section>
+
+</div></main>
+<script src="deck.js"></script>
+<script>
+(function () {
+  /* 7장 초과회복 그래프 */
+  Chart.line(document.getElementById('scStatic'), {
+    values: [100, 84, 98, 109, 100],
+    labels: ['운동 전', '운동 직후', '24시간 후', '48시간 후\n(초과회복)', '휴식만\n길어질 때'],
+    min: 70, max: 115, ticks: [80, 90, 100, 110], hot: [3], showVals: true, ref: 100,
+    w: 640, h: 360, pad: { l: 50, r: 40, t: 30, b: 60 }
+  });
+
+  /* 8장 초과회복 시뮬레이터 */
+  const KNOTS = [[0, -16], [24, -2], [48, 9], [72, 7], [96, 4], [168, 0]];
+  function A(h) {
+    if (h >= 168) return 0;
+    for (let i = 1; i < KNOTS.length; i++) {
+      if (h <= KNOTS[i][0]) { const [h0, v0] = KNOTS[i - 1], [h1, v1] = KNOTS[i]; return v0 + (v1 - v0) * (h - h0) / (h1 - h0); }
+    }
+    return 0;
+  }
+  const HORIZON = 14 * 24;
+  function simulate(gap) {
+    const pts = []; const sessions = [];
+    let L = 100, t0 = 0, k = 1;
+    for (let t = 0; t <= HORIZON; t++) {
+      if (t === t0 && t < HORIZON) { sessions.push(t); }
+      let h = t - t0;
+      let a = A(h); a = a > 0 ? a * k : a;
+      let v = L + a;
+      if (t > 0 && t === t0 + gap && t < HORIZON) {
+        // 다음 운동 시작: 지금 수준에서 새로 출발
+        L = v; t0 = t; k = Math.max(0.15, 1 - (L - 100) / 40); sessions.push(t);
+        pts.push([t, v]); v = L + A(0); h = 0;
+      }
+      pts.push([t, v]);
+    }
+    return { pts, sessions: Array.from(new Set(sessions)), end: pts[pts.length - 1][1] };
+  }
+  const MSG = {
+    24: '<b>회복이 끝나기 전에 또 자극</b>해서 조금씩 내려갑니다. 같은 부위를 매일 하고 싶다면 상체·하체처럼 번갈아 하거나 강도를 낮춥니다.',
+    48: '<b>초과회복 꼭대기에서 다시 자극</b>해 계단처럼 올라갑니다. 주 2~3회 규칙적으로 하라는 권고의 근거입니다.',
+    72: '꼭대기는 조금 지났지만 <b>아직 초과회복 구간</b>이라 천천히 올라갑니다.',
+    168: '올라갔던 수준이 <b>원래대로 돌아온 뒤</b> 운동해서 제자리입니다. 생각 열기 Q3의 답입니다.'
+  };
+  const svg = document.getElementById('scChart');
+  const NS = 'http://www.w3.org/2000/svg';
+  const W = 720, H = 330, P = { l: 48, r: 16, t: 16, b: 40 };
+  const MIN = 60, MAX = 140;
+  const X = t => P.l + (W - P.l - P.r) * t / HORIZON;
+  const Y = v => P.t + (H - P.t - P.b) * (1 - (v - MIN) / (MAX - MIN));
+  function mk(tag, at, txt) { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); if (txt != null) e.textContent = txt; svg.appendChild(e); return e; }
+  let raf = null;
+  function draw(gap, animate) {
+    cancelAnimationFrame(raf);
+    const r = simulate(gap);
+    svg.innerHTML = '';
+    [60, 80, 100, 120, 140].forEach(v => { mk('line', { x1: P.l, x2: W - P.r, y1: Y(v), y2: Y(v), class: v === 100 ? 'base' : 'grid' }); mk('text', { x: P.l - 8, y: Y(v) + 5, 'text-anchor': 'end' }, v); });
+    for (let d = 0; d <= 14; d += 2) mk('text', { x: X(d * 24), y: H - 14, 'text-anchor': 'middle' }, d === 0 ? '시작' : d + '일');
+    const line = mk('polyline', { class: 'ln', points: '' });
+    const dots = r.sessions.map(t => { const c = mk('circle', { cx: X(t), cy: H - P.b + 2, r: 6, class: 'ses' }); c.style.opacity = animate ? 0 : 1; return { t, c }; });
+    const head = mk('circle', { r: 7, class: 'now' });
+    const all = r.pts.map(p => X(p[0]).toFixed(1) + ',' + Y(p[1]).toFixed(1));
+    const nEl = document.getElementById('scN'), eEl = document.getElementById('scEnd');
+    function finish() {
+      line.setAttribute('points', all.join(' '));
+      const last = r.pts[r.pts.length - 1]; head.setAttribute('cx', X(last[0])); head.setAttribute('cy', Y(last[1]));
+      dots.forEach(d => d.c.style.opacity = 1);
+      nEl.innerHTML = r.sessions.length + '<small>회</small>';
+      eEl.textContent = Math.round(r.end);
+      document.getElementById('scMsg').innerHTML = MSG[gap];
+    }
+    if (!animate || matchMedia('(prefers-reduced-motion: reduce)').matches) { finish(); return; }
+    const t0 = performance.now(), DUR = 3200;
+    nEl.innerHTML = '0<small>회</small>'; eEl.textContent = '100';
+    document.getElementById('scMsg').textContent = '재생 중…';
+    (function frame(now) {
+      const f = Math.min(1, (now - t0) / DUR);
+      const n = Math.max(1, Math.floor(all.length * f));
+      line.setAttribute('points', all.slice(0, n).join(' '));
+      const p = r.pts[n - 1]; head.setAttribute('cx', X(p[0])); head.setAttribute('cy', Y(p[1]));
+      let c = 0; dots.forEach(d => { if (d.t <= p[0]) { d.c.style.opacity = 1; c++; } });
+      nEl.innerHTML = c + '<small>회</small>'; eEl.textContent = Math.round(p[1]);
+      if (f < 1) raf = requestAnimationFrame(frame); else finish();
+    })(t0);
+  }
+  let gap = 48;
+  document.getElementById('scSeg').addEventListener('click', e => {
+    const b = e.target.closest('[data-h]'); if (!b) return;
+    gap = +b.dataset.h;
+    document.querySelectorAll('#scSeg .btn').forEach(x => x.classList.toggle('on', x === b));
+    draw(gap, true);
+  });
+  document.getElementById('scPlay').addEventListener('click', () => draw(gap, true));
+  draw(gap, false);
+})();
+</script>
+</body>
+</html>

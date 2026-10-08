@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>라 · 안전사고 예방과 대처</title>
+<meta name="description" content="체육1 건강 홈트레이닝 — 학습지 라. 동작별 부상 부위와 교정, R.I.C.E, 심폐소생술 순서와 가슴압박 리듬.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;800;900&family=IBM+Plex+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="deck.css">
+<style>
+  .inj { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .inj .card { gap: 6px; padding: 16px 20px; }
+  .inj .card h4 { font-size: 22px; }
+  .inj .risk { font-size: 18px; }
+  .inj .fix { font-size: 18px; font-weight: 800; color: var(--coral-ink); }
+  .inj .fix::before { content: "→ "; }
+  .portrait .inj { grid-template-columns: 1fr; }
+  .rice { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .rice .card { align-items: flex-start; }
+  .rice .L { font-family: var(--f-display); font-weight: 900; font-size: 74px; line-height: 1; color: var(--teal); }
+  .rice .card:nth-child(2) .L { color: var(--coral); } .rice .card:nth-child(3) .L { color: var(--violet); } .rice .card:nth-child(4) .L { color: var(--sun); }
+  .rice .en { font-family: var(--f-mono); font-size: 16px; color: var(--muted); }
+  .rice .ko { font-size: 26px; font-weight: 800; font-family: var(--f-display); }
+  .rice p { font-size: 18px; }
+  .portrait .rice { grid-template-columns: 1fr 1fr; }
+  .cpr { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; }
+  .cpr > div { display: flex; flex-direction: column; gap: 10px; padding: 0 12px; }
+  .cpr .num { font-family: var(--f-display); font-weight: 900; font-size: 22px; color: #fff; background: var(--coral); border-radius: 12px; padding: 14px 16px; }
+  .cpr > div:nth-child(4) .num { background: var(--navy); }
+  .cpr p { font-size: 19px; }
+  .portrait .cpr { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .lab-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 20px; flex: 1; min-height: 0; }
+  .portrait .lab-grid { grid-template-columns: 1fr; }
+  #pose { width: 100%; height: auto; display: block; }
+  #pose .ground { stroke: var(--lab-line); stroke-width: 3; }
+  #pose .guide { stroke: var(--teal); stroke-width: 2.5; stroke-dasharray: 8 8; fill: none; }
+  #pose .bone { stroke: var(--lab-ink); stroke-width: 12; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+  #pose .bone.bad { stroke: var(--coral); }
+  #pose .joint { fill: var(--sun); }
+  #pose .head { fill: var(--lab-ink); }
+  #pose .mat { fill: var(--lab-line); opacity: .6; }
+  #pose text { font-size: 16px; font-weight: 700; }
+  .verdict { font-size: 22px; font-weight: 800; }
+  .verdict.ok { color: var(--teal); } .verdict.no { color: var(--coral); }
+  .pad { width: 220px; height: 220px; border-radius: 50%; border: 0; cursor: pointer; background: var(--coral); color: #fff; font-family: var(--f-display); font-weight: 900; font-size: 30px; box-shadow: 0 10px 0 #9c2b18; transition: transform .06s, box-shadow .06s; touch-action: manipulation; user-select: none; -webkit-user-select: none; }
+  .pad.down { transform: translateY(8px); box-shadow: 0 2px 0 #9c2b18; }
+  .gauge { position: relative; height: 26px; border-radius: 8px; background: var(--lab-line); overflow: hidden; }
+  .gauge .band { position: absolute; top: 0; bottom: 0; background: var(--teal); opacity: .45; }
+  .gauge .ndl { position: absolute; top: -4px; bottom: -4px; width: 5px; border-radius: 3px; background: var(--sun); transition: left .2s; }
+  .gscale { display: flex; justify-content: space-between; font-family: var(--f-mono); font-size: 13px; color: var(--lab-muted); }
+  .beat { width: 18px; height: 18px; border-radius: 50%; background: var(--lab-line); display: inline-block; vertical-align: middle; }
+  .beat.on { background: var(--sun); }
+  .pre4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .pre4 label { display: flex; flex-direction: column; gap: 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; cursor: pointer; font-size: 19px; font-weight: 700; }
+  .pre4 label span.n { font-family: var(--f-mono); color: var(--coral-ink); }
+  .pre4 label small { font-weight: 400; color: var(--muted); font-size: 16px; }
+  .pre4 input { width: 24px; height: 24px; accent-color: var(--teal); }
+  .pre4 label:has(input:checked) { border: 2px solid var(--teal); background: var(--teal-soft); }
+  .portrait .pre4 { grid-template-columns: 1fr 1fr; }
+</style>
+</head>
+<body data-title="라 · 안전사고 예방과 대처">
+<main class="viewport"><div class="stage">
+
+<!-- 1 -->
+<section class="slide title-slide" data-sec="시작" data-label="안전사고 예방과 대처">
+  <svg class="art" viewBox="0 0 470 300" aria-hidden="true">
+    <line class="a-base" x1="0" y1="160" x2="470" y2="160"/>
+    <path class="a-line" d="M6 160 L110 160 L128 132 L146 160 L170 160 L184 60 L204 240 L222 160 L262 160 L280 120 L304 160 L462 160"/>
+    <circle class="a-dot" cx="184" cy="60" r="8"/>
+    <text class="a-lbl" x="312" y="140">분당 100~120회</text>
+  </svg>
+  <span class="pill">학습지 라 · 5분 수업</span>
+  <h1>안전사고<br><span class="y">예방과 대처</span></h1>
+  <p class="sub">다치지 않는 것이 가장 좋은 운동 실력입니다.</p>
+  <p class="std">[12체육1-01-03] 건강 관리 측면에서 고려해야 할 다양한 안전 요소를 이해하고, 안전사고에 적절하게 대처한다.</p>
+  <span class="letter" aria-hidden="true">라</span>
+  <aside class="notes"><p>집에서 혼자 운동할 때는 봐 주는 사람이 없다는 점을 짚으며 시작합니다.</p><p>오늘 배울 것은 예방 → 응급처치 → 신고 순서입니다.</p></aside>
+</section>
+
+<!-- 2 -->
+<section class="slide" data-sec="시작">
+  <header class="sh rise"><span class="sec"><b>0</b>학습지 지도</span><h2>학습지 라, 다섯 문항의 위치</h2></header>
+  <div class="wsmap rise">
+    <div class="it"><b>1번</b><span>동작과 위험 부위 연결하기<small>4~6장</small></span></div>
+    <div class="it"><b>2번</b><span>응급처치 O / X<small>8장</small></span></div>
+    <div class="it"><b>3번</b><span>R.I.C.E 네 가지<small>7장</small></span></div>
+    <div class="it"><b>4번</b><span>상황별 대처 ①②③<small>9~11장</small></span></div>
+    <div class="it"><b>5번</b><span>운동 전 점검표<small>12~13장</small></span></div>
+    <div class="it"><b>실험</b><span>자세 판정기 · 가슴압박 리듬<small>6장 · 10장</small></span></div>
+  </div>
+  <aside class="notes"><p>오늘은 실험실이 두 개입니다. 6장에서 자세를, 10장에서 가슴압박 리듬을 직접 해 봅니다.</p></aside>
+</section>
+
+<!-- 3 -->
+<section class="slide" data-sec="시작">
+  <header class="sh rise"><span class="sec"><b>0</b>혼자 하는 운동의 위험</span><h2>집에서는 <em>자세를 봐 주는 사람</em>이 없다</h2><p class="lead">그래서 오늘은 세 단계를 순서대로 익힌다.</p></header>
+  <div class="flow" style="--n:3">
+    <div><div class="chev teal">예방</div><p class="desc">동작별 바른 자세, 운동 전 점검</p></div>
+    <div class="step"><div class="chev coral">응급처치</div><p class="desc">삐거나 부딪혔을 때 R.I.C.E</p></div>
+    <div class="step"><div class="chev">신고</div><p class="desc">반응·호흡이 없으면 119와 가슴압박</p></div>
+  </div>
+  <div class="memo step"><span class="lab">공통 원칙</span><p>통증이 느껴지면 즉시 멈춘다. "참고 하는 것"은 용기가 아니라 부상으로 가는 길이다.</p></div>
+  <aside class="notes"><p>"참고 하는 것은 용기가 아니다"를 학생들이 따라 읽게 합니다. 수업 마지막에 한 번 더 반복합니다.</p></aside>
+</section>
+
+<!-- 4 -->
+<section class="slide" data-sec="1 예방">
+  <header class="sh rise"><div class="row"><span class="sec"><b>1</b>동작마다 다치는 곳이 다르다</span><span class="ws">학습지 1번</span></div><h2>위험 신호와 <em class="coral" style="color:var(--coral-ink)">교정 포인트</em></h2></header>
+  <div class="inj body">
+    <div class="card"><h4><span class="dot"></span>스쿼트</h4><p class="risk">무릎이 안쪽으로 모이면 무릎 관절이 비틀린다.</p><p class="fix step">무릎이 발끝 방향을 향하게</p></div>
+    <div class="card"><h4><span class="dot"></span>플랭크</h4><p class="risk">허리가 아래로 처지면 허리에 부담이 쌓인다.</p><p class="fix step">머리-엉덩이-발뒤꿈치 일직선</p></div>
+    <div class="card"><h4><span class="dot"></span>버피테스트</h4><p class="risk">착지 순간 발목을 접질리기 쉽다.</p><p class="fix step">무릎을 굽혀 부드럽게 착지</p></div>
+    <div class="card"><h4><span class="dot violet"></span>덤벨컬 · 레이즈</h4><p class="risk">반동을 쓰면 어깨가 부딪히고 허리가 젖혀진다.</p><p class="fix step">가벼운 무게로 천천히</p></div>
+    <div class="card"><h4><span class="dot violet"></span>크런치 · 싯업</h4><p class="risk">손으로 목을 당기면 목뼈에 무리가 간다.</p><p class="fix step">손은 가볍게 귀 옆에</p></div>
+    <div class="card dark"><h4>공통 원칙</h4><p class="risk">통증이 느껴지면 <strong>즉시 멈춘다</strong>.</p><p class="small muted">참고 하는 것은 부상으로 가는 길</p></div>
+  </div>
+  <aside class="notes"><p>가능하면 교사가 직접 잘못된 자세를 한 번씩 보여 주면 이해가 훨씬 빠릅니다. 산호색 문구가 교정 포인트입니다.</p></aside>
+</section>
+
+<!-- 5 -->
+<section class="slide" data-sec="1 예방">
+  <header class="sh rise"><div class="row"><span class="sec"><b>1</b>연결 문항</span><span class="ws">학습지 1번</span><span class="score"></span></div><h2>동작과 위험을 연결해 보세요</h2></header>
+  <div class="match">
+    <ul class="left">
+      <li data-a="㉯">스쿼트</li>
+      <li data-a="㉰">플랭크</li>
+      <li data-a="㉲">버피테스트</li>
+      <li data-a="㉱">덤벨컬 · 레이즈</li>
+      <li data-a="㉮">크런치 · 싯업</li>
+    </ul>
+    <ul class="right">
+      <li data-k="㉮">손으로 목을 당겨 목뼈에 무리가 간다</li>
+      <li data-k="㉯">무릎이 안쪽으로 모여 무릎 관절이 비틀린다</li>
+      <li data-k="㉰">허리가 아래로 처져 허리에 부담이 쌓인다</li>
+      <li data-k="㉱">반동을 써서 어깨가 부딪히고 허리가 젖혀진다</li>
+      <li data-k="㉲">착지 순간 발목을 접질린다</li>
+    </ul>
+  </div>
+  <p class="note-line">연결 정답 : 스쿼트 ㉯ · 플랭크 ㉰ · 버피테스트 ㉲ · 덤벨컬·레이즈 ㉱ · 크런치·싯업 ㉮</p>
+  <aside class="notes"><p>학습지를 먼저 채우게 한 뒤 단추로 확인합니다.</p></aside>
+</section>
+
+<!-- 6 LAB -->
+<section class="slide lab-slide" data-sec="1 예방" data-label="몸속 실험실 — 자세 판정기">
+  <header class="sh rise"><span class="sec"><b>★</b>몸속 실험실</span><h2>자세 판정기 — <em>어디서부터 위험할까?</em></h2><p class="lead">동작을 고르고 막대를 움직여 자세를 바꿔 보세요.</p></header>
+  <div class="lab-grid">
+    <div class="panel" style="display:flex;flex-direction:column;gap:10px">
+      <svg id="pose" class="int" viewBox="0 0 720 320" role="img" aria-label="자세 그림"></svg>
+      <div><label class="ctl-l" for="poseR" id="poseLbl">엉덩이 높이</label><input id="poseR" type="range" min="-40" max="40" step="1" value="22"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="panel"><div class="ctl-l">동작</div>
+        <div class="seg" id="poseSeg"><button type="button" class="btn on" data-m="plank">플랭크 (옆에서)</button><button type="button" class="btn" data-m="squat">스쿼트 (앞에서)</button></div></div>
+      <div class="panel" style="display:flex;flex-direction:column;gap:8px">
+        <div class="readout"><span class="k" id="devK">일직선에서 벗어난 각도</span><span class="v" id="devV">0°</span></div>
+        <p class="verdict" id="verd"></p>
+        <p class="lab-msg" id="poseMsg"></p>
+      </div>
+    </div>
+  </div>
+  <p class="disclaim">청록 점선 = 바른 자세의 기준선. 막대 하나로 단순화한 그림입니다.</p>
+  <aside class="notes"><p>처음 화면은 허리가 처진 플랭크입니다. 학생에게 막대를 움직여 일직선을 찾게 하고, 반대로 엉덩이를 너무 들어도 안 된다는 점을 보여 줍니다.</p><p>스쿼트는 앞에서 본 그림입니다. 무릎이 발끝 방향(점선)을 벗어나 안쪽으로 모이면 빨갛게 바뀝니다.</p></aside>
+</section>
+
+<!-- 7 -->
+<section class="slide" data-sec="2 응급처치">
+  <header class="sh rise"><div class="row"><span class="sec"><b>2</b>다쳤을 때 — R.I.C.E</span><span class="ws">학습지 3번</span></div><h2>삐거나 부딪혔을 때 48시간 안에 해야 할 네 가지</h2></header>
+  <div class="rice body">
+    <div class="card"><span class="L">R</span><span class="en">Rest</span><span class="ko"><span class="blank">안정</span></span><p>움직임을 멈추고 다친 부위를 쓰지 않는다.</p></div>
+    <div class="card"><span class="L">I</span><span class="en">Ice</span><span class="ko"><span class="blank">냉찜질</span></span><p>얼음을 수건에 싸서 15~20분씩 대어 준다.</p></div>
+    <div class="card"><span class="L">C</span><span class="en">Compression</span><span class="ko"><span class="blank">압박</span></span><p>탄력붕대로 적당히 감아 붓기를 줄인다.</p></div>
+    <div class="card"><span class="L">E</span><span class="en">Elevation</span><span class="ko"><span class="blank">거상</span></span><p>심장보다 높게 올려 피가 몰리지 않게 한다.</p></div>
+  </div>
+  <aside class="notes"><p>네 글자를 소리 내어 함께 읽게 하면 기억에 잘 남습니다. 빈칸을 열기 전에 영어 단어만 보고 뜻을 맞혀 보게 합니다.</p><p>얼음을 맨살에 직접 대지 않는다는 점, 압박은 손발 끝이 저리거나 색이 변할 만큼 세게 하지 않는다는 점도 덧붙입니다.</p></aside>
+</section>
+
+<!-- 8 -->
+<section class="slide" data-sec="2 응급처치">
+  <header class="sh rise"><div class="row"><span class="sec"><b>2</b>헷갈리는 것</span><span class="ws">학습지 2번</span><span class="score"></span></div><h2>다친 직후 48시간은 <em>냉찜질</em>입니다</h2></header>
+  <ol class="ox">
+    <li data-a="O"><span class="t">발목을 삐면 운동을 바로 멈추고 다친 발을 쓰지 않는다.</span><span class="why">R — 안정. 참고 계속하면 더 크게 다친다.</span></li>
+    <li data-a="X"><span class="t">다친 직후에는 따뜻한 찜질로 근육을 풀어 준다.</span><span class="why"><b>X</b> — 다친 직후 48시간은 냉찜질. 온찜질은 붓기를 키울 수 있다.</span></li>
+    <li data-a="X"><span class="t">붓기를 빼려면 파스를 바르고 세게 문질러 준다.</span><span class="why"><b>X</b> — 문지르기·마사지는 붓기를 키울 수 있어 나중에 한다.</span></li>
+    <li data-a="O"><span class="t">다친 다리는 베개 등을 받쳐 심장보다 높게 올려 둔다.</span><span class="why">E — 거상. 피가 몰리지 않아 붓기가 줄어든다.</span></li>
+  </ol>
+  <p class="note-line">O/X 정답 : (1) O (2) X (3) X (4) O — 문장 표현은 학습지와 다를 수 있습니다.</p>
+  <aside class="notes"><p>학습지 2번 O/X 정답도 이 장에서 함께 확인합니다. 온찜질·마사지·파스로 문지르는 것은 "나중에" 하는 것이지 "절대 안 되는 것"은 아니라는 점을 짚어 줍니다.</p></aside>
+</section>
+
+<!-- 9 -->
+<section class="slide" data-sec="3 가장 급한 상황">
+  <header class="sh rise"><div class="row"><span class="sec"><b>3</b>가장 급한 상황</span><span class="ws">학습지 4번 ③</span></div><h2>반응과 호흡이 없을 때 — <em>순서만 기억하면 된다</em></h2></header>
+  <div class="cpr body">
+    <div><span class="num">1. 반응 확인</span><p>어깨를 두드리며 큰 소리로 부른다.</p></div>
+    <div class="step"><span class="num">2. <span class="blank">119 신고</span></span><p>주변 사람을 지목해 "○○ 님, 신고해 주세요".</p></div>
+    <div class="step"><span class="num">3. <span class="blank">AED 요청</span></span><p>자동심장충격기를 가져오게 한다.</p></div>
+    <div class="step"><span class="num">4. 가슴압박</span><p>분당 <span class="blank">100~120회</span>, 깊이 약 <span class="blank">5cm</span>, 멈추지 않기.</p></div>
+  </div>
+  <p class="note-line">"누가 신고해 주세요"보다 한 사람을 정확히 지목해야 실제로 신고가 이루어진다. 119 상담원이 전화로 가슴압박 방법을 안내해 준다.</p>
+  <aside class="notes"><p>가슴압박 속도는 실제로 손뼉을 치며 분당 100회 리듬을 체험시키면 좋습니다. 다음 장에서 직접 해 봅니다.</p></aside>
+</section>
+
+<!-- 10 LAB -->
+<section class="slide lab-slide" data-sec="3 가장 급한 상황" data-label="몸속 실험실 — 가슴압박 리듬">
+  <header class="sh rise"><span class="sec"><b>★</b>몸속 실험실</span><h2>가슴압박 리듬 — <em>분당 100~120회</em>를 몸으로</h2><p class="lead">빨간 단추를 일정하게 눌러 보세요. 단추를 고른 뒤 Space 키로 눌러도 됩니다.</p></header>
+  <div class="lab-grid" style="grid-template-columns:300px 1fr">
+    <div class="panel center" style="gap:16px;display:flex;flex-direction:column;align-items:center;justify-content:center">
+      <button type="button" class="pad no-swipe" id="pad" aria-label="가슴압박 누르기">누르기</button>
+      <p class="tiny">연속 누른 횟수 <span class="mono" id="cprN">0</span>회</p>
+    </div>
+    <div class="panel" style="display:flex;flex-direction:column;gap:14px">
+      <div class="readout"><span class="k">지금 속도</span><span class="v" id="cprR">—<small>회/분</small></span></div>
+      <div><div class="gauge"><span class="band" id="band"></span><span class="ndl" id="ndl" style="left:0"></span></div>
+        <div class="gscale"><span>60</span><span>80</span><span>100</span><span>120</span><span>140</span><span>160</span></div></div>
+      <p class="lab-msg" id="cprMsg">단추를 6번 이상 누르면 속도가 나타납니다.</p>
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+        <button type="button" class="btn" id="metro">♪ 박자 소리 켜기 (110회/분)</button><span class="beat" id="beat"></span>
+        <button type="button" class="btn" id="cprReset">처음부터</button>
+      </div>
+    </div>
+  </div>
+  <p class="disclaim">속도만 잽니다. 실제 가슴압박은 깊이 약 5cm, 누른 뒤 가슴이 완전히 올라오게 하고, 119 구급대가 올 때까지 멈추지 않습니다.</p>
+  <aside class="notes"><p>먼저 박자 소리 없이 해 보고, 그다음 박자 소리를 켜고 맞춰 봅니다. 대부분 처음에는 너무 빠르거나 점점 느려집니다.</p><p>110회/분은 익숙한 노래로는 빠른 댄스곡 정도의 박자입니다. 2분이 생각보다 길다는 점도 체험시키면 좋습니다.</p></aside>
+</section>
+
+<!-- 11 -->
+<section class="slide" data-sec="3 가장 급한 상황">
+  <header class="sh rise"><div class="row"><span class="sec"><b>3</b>상황별 대처</span><span class="ws">학습지 4번 ①②</span></div><h2>이럴 땐 어떻게 할까?</h2></header>
+  <div class="cols c3 body">
+    <div class="quiz mcq" data-answer="나">
+      <p class="q"><span class="qn">①</span>스쿼트 중 무릎에서 소리가 나고 아프다</p>
+      <div class="opts"><button class="opt" data-k="가">세트는 마저 끝낸다</button><button class="opt" data-k="나">즉시 중단 → 냉찜질 → 통증이 남으면 병원</button><button class="opt" data-k="다">파스를 바르고 다시 한다</button></div>
+      <p class="fb">통증이 있으면 멈추는 것이 첫 번째입니다.</p>
+    </div>
+    <div class="quiz mcq" data-answer="가">
+      <p class="q"><span class="qn">②</span>덤벨을 발등에 떨어뜨렸다</p>
+      <div class="opts"><button class="opt" data-k="가">냉찜질 + 압박 + 다리 올리기</button><button class="opt" data-k="나">따뜻한 물에 발 담그기</button><button class="opt" data-k="다">걸어 다니며 풀어 주기</button></div>
+      <p class="fb">R.I.C.E 그대로 — 안정, 냉찜질, 압박, 거상.</p>
+    </div>
+    <div class="quiz mcq" data-answer="다">
+      <p class="q"><span class="qn">③</span>운동 후 어지럽고 메스껍다</p>
+      <div class="opts"><button class="opt" data-k="가">바로 일어나 걸어 본다</button><button class="opt" data-k="나">찬물로 샤워한다</button><button class="opt" data-k="다">눕히고 다리를 올린 뒤 수분 섭취, 회복 안 되면 신고</button></div>
+      <p class="fb">눕히고 다리를 올리면 머리 쪽으로 피가 돌아옵니다.</p>
+    </div>
+  </div>
+  <aside class="notes"><p>세 상황은 빠르게 읽고 넘어갑니다. 손을 들어 답을 고르게 한 뒤 확인합니다.</p></aside>
+</section>
+
+<!-- 12 -->
+<section class="slide" data-sec="4 운동 전 점검">
+  <header class="sh rise"><div class="row"><span class="sec"><b>4</b>운동 전 30초 점검</span><span class="ws">학습지 5번</span></div><h2>이 네 가지만 습관으로 만들자</h2></header>
+  <div class="pre4 interactive">
+    <label><span class="n">1</span><input type="checkbox" id="pre-1"> 바닥·주변 정리<small>미끄러운 매트, 모서리, 걸리는 물건 치우기</small></label>
+    <label><span class="n">2</span><input type="checkbox" id="pre-2"> 준비운동 5분<small>관절 돌리기, 가볍게 제자리 걷기</small></label>
+    <label><span class="n">3</span><input type="checkbox" id="pre-3"> 기구와 무게 확인<small>덤벨이 헐겁지 않은지, 무게가 알맞은지</small></label>
+    <label><span class="n">4</span><input type="checkbox" id="pre-4"> 오늘 내 몸 상태 확인<small>아픈 곳, 잠, 아침 식사</small></label>
+  </div>
+  <div class="memo step"><span class="lab">하나 더</span><p>집에서 혼자 운동할 때는 가족에게 "지금 운동한다"고 알리고 시작한다.</p></div>
+  <aside class="notes"><p>네 칸을 직접 눌러 보게 합니다. 실천 계획서(학습지 마)에 그대로 옮겨 적을 내용입니다.</p></aside>
+</section>
+
+<!-- 13 -->
+<section class="slide end-slide" data-sec="마무리" data-label="오늘의 정리">
+  <header class="sh rise"><div class="row"><span class="sec"><b>✓</b>오늘의 정리</span><span class="ws" style="border-color:var(--sun);color:var(--sun)">학습지 5번</span></div><h2>운동 전 30초 점검이 부상을 막습니다</h2><p class="lead">바닥·주변 정리 → 준비운동 5분 → 기구와 무게 확인 → 오늘 내 몸 상태 확인</p></header>
+  <div class="split even">
+    <div class="card"><h4>스스로 점검</h4>
+      <ul class="checklist">
+        <li><label><input type="checkbox" id="ck-d1"> 동작별 위험 부위를 안다</label></li>
+        <li><label><input type="checkbox" id="ck-d2"> R.I.C.E를 순서대로 말할 수 있다</label></li>
+        <li><label><input type="checkbox" id="ck-d3"> 119·AED·가슴압박 순서를 안다</label></li>
+      </ul>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;justify-content:flex-end">
+      <p class="big">통증이 있으면 멈춘다.</p>
+      <p class="next">다음 시간 : <a href="plan.html">학습지 마 — 홈트레이닝 실천 계획서 →</a></p>
+    </div>
+  </div>
+  <aside class="notes"><p>"통증이 있으면 멈춘다"를 마지막으로 한 번 더 반복하고 마칩니다.</p></aside>
+</section>
+
+</div></main>
+<script src="deck.js"></script>
+<script>
+(function () {
+  /* 6장 자세 판정기 */
+  const svg = document.getElementById('pose'), NS = 'http://www.w3.org/2000/svg';
+  const R = document.getElementById('poseR');
+  let mode = 'plank';
+  const mk = (tag, at, txt) => { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); if (txt != null) e.textContent = txt; svg.appendChild(e); return e; };
+  const pl = pts => pts.map(p => p.join(',')).join(' ');
+  function plank(v) {
+    const G = 268, sh = [210, 178], heel = [620, 236], elbow = [210, G - 8], hand = [138, G - 8];
+    mk('rect', { x: 100, y: G - 2, width: 560, height: 10, rx: 4, class: 'mat' });
+    mk('line', { x1: 60, x2: 680, y1: G + 8, y2: G + 8, class: 'ground' });
+    mk('line', { x1: sh[0] - 70, y1: sh[1] - (heel[1] - sh[1]) / (heel[0] - sh[0]) * 70, x2: heel[0] + 30, y2: heel[1] + (heel[1] - sh[1]) / (heel[0] - sh[0]) * 30, class: 'guide' });
+    const mid = [(sh[0] + heel[0]) / 2, (sh[1] + heel[1]) / 2];
+    const hip = [mid[0], mid[1] + v];
+    const knee = [(hip[0] + heel[0]) / 2, (hip[1] + heel[1]) / 2 + v * .18];
+    const lineAng = Math.atan2(heel[1] - sh[1], heel[0] - sh[0]);
+    const torsoAng = Math.atan2(hip[1] - sh[1], hip[0] - sh[0]);
+    const dev = Math.round(Math.abs(torsoAng - lineAng) * 180 / Math.PI);
+    const bad = dev > 4;
+    mk('polyline', { points: pl([hand, elbow, sh]), class: 'bone' });
+    mk('polyline', { points: pl([sh, hip]), class: 'bone' + (bad ? ' bad' : '') });
+    mk('polyline', { points: pl([hip, knee, heel, [heel[0] + 12, G - 2]]), class: 'bone' });
+    mk('polyline', { points: pl([sh, [184, 168]]), class: 'bone' });
+    mk('circle', { cx: 172, cy: 160, r: 22, class: 'head' });
+    [sh, hip, knee, elbow].forEach(p => mk('circle', { cx: p[0], cy: p[1], r: 6, class: 'joint' }));
+    mk('text', { x: heel[0] - 40, y: heel[1] - 30, style: 'fill:var(--teal)' }, '일직선 기준');
+    let verd, msg;
+    if (!bad) { verd = '좋은 자세 — 일직선'; msg = '머리-엉덩이-발뒤꿈치가 한 줄입니다. 배에 힘을 주고 이 자세를 버팁니다.'; }
+    else if (v > 0) { verd = '허리 처짐'; msg = '엉덩이가 내려가 <b>허리에 부담이 쌓입니다</b>. 배와 엉덩이에 힘을 주어 끌어올리세요. 버티기 힘들면 무릎을 대고 합니다.'; }
+    else { verd = '엉덩이 들림'; msg = '엉덩이가 올라가 코어 운동 효과가 줄고 <b>어깨에 무게가 실립니다</b>. 엉덩이를 내려 일직선을 맞추세요.'; }
+    return { dev, bad, verd, msg };
+  }
+  function squat(v) {
+    const G = 280;
+    mk('line', { x1: 160, x2: 560, y1: G, y2: G, class: 'ground' });
+    const aL = [300, G - 14], aR = [420, G - 14], tL = [272, G - 4], tR = [448, G - 4];
+    const hipL = [328, 150], hipR = [392, 150];
+    const kL = [287 - v, 212], kR = [433 + v, 212];
+    // 발끝 방향 기준선(무릎이 지나야 할 선)
+    const ext = (t, k) => t[0] + (k[0] - t[0]) * (t[1] - 140) / (t[1] - k[1]);
+    mk('line', { x1: tL[0], y1: tL[1], x2: ext(tL, [287, 212]), y2: 140, class: 'guide' });
+    mk('line', { x1: tR[0], y1: tR[1], x2: ext(tR, [433, 212]), y2: 140, class: 'guide' });
+    const bad = v < -6, wide = v > 8;
+    const cls = 'bone' + (bad || wide ? ' bad' : '');
+    mk('polyline', { points: pl([hipL, kL, aL, tL]), class: cls });
+    mk('polyline', { points: pl([hipR, kR, aR, tR]), class: cls });
+    mk('polyline', { points: pl([hipL, hipR]), class: 'bone' });
+    mk('polyline', { points: pl([[360, 150], [360, 66]]), class: 'bone' });
+    mk('polyline', { points: pl([[300, 84], [420, 84]]), class: 'bone' });
+    mk('circle', { cx: 360, cy: 38, r: 24, class: 'head' });
+    [kL, kR, hipL, hipR].forEach(p => mk('circle', { cx: p[0], cy: p[1], r: 6, class: 'joint' }));
+    mk('text', { x: 470, y: 120, style: 'fill:var(--teal)' }, '발끝 방향');
+    const dev = Math.round(Math.abs(Math.atan2(-v, 70)) * 180 / Math.PI);
+    let verd, msg;
+    if (bad) { verd = '무릎이 안쪽으로 모임'; msg = '무릎이 발끝 방향보다 안쪽으로 들어와 <b>무릎 관절이 비틀립니다</b>. 무릎을 발끝 방향으로 살짝 밀어내세요.'; }
+    else if (wide) { verd = '무릎이 너무 벌어짐'; msg = '무릎이 발끝보다 바깥으로 나갔습니다. 무릎과 발끝이 <b>같은 방향</b>을 보게 맞춥니다.'; }
+    else { verd = '좋은 자세 — 무릎이 발끝 방향'; msg = '무릎과 발끝이 같은 방향입니다. 이 정렬을 유지하며 앉았다 일어섭니다.'; }
+    return { dev, bad: bad || wide, verd, msg };
+  }
+  function draw() {
+    svg.innerHTML = '';
+    const v = +R.value;
+    const r = mode === 'plank' ? plank(v) : squat(v);
+    document.getElementById('devV').textContent = r.dev + '°';
+    const vd = document.getElementById('verd'); vd.textContent = r.verd; vd.className = 'verdict ' + (r.bad ? 'no' : 'ok');
+    document.getElementById('poseMsg').innerHTML = r.msg;
+  }
+  document.getElementById('poseSeg').addEventListener('click', e => {
+    const b = e.target.closest('[data-m]'); if (!b) return;
+    mode = b.dataset.m;
+    document.querySelectorAll('#poseSeg .btn').forEach(x => x.classList.toggle('on', x === b));
+    if (mode === 'plank') { R.min = -40; R.max = 40; R.value = 22; document.getElementById('poseLbl').textContent = '엉덩이 높이 (왼쪽 = 들기, 오른쪽 = 처짐)'; document.getElementById('devK').textContent = '일직선에서 벗어난 각도'; }
+    else { R.min = -30; R.max = 16; R.value = -20; document.getElementById('poseLbl').textContent = '무릎 방향 (왼쪽 = 안쪽으로, 오른쪽 = 바깥으로)'; document.getElementById('devK').textContent = '발끝 방향에서 벗어난 각도'; }
+    draw();
+  });
+  document.getElementById('poseLbl').textContent = '엉덩이 높이 (왼쪽 = 들기, 오른쪽 = 처짐)';
+  R.addEventListener('input', draw);
+  draw();
+
+  /* 10장 가슴압박 리듬 */
+  const pad = document.getElementById('pad');
+  const MIN = 60, MAX = 160;
+  const pct = v => (Math.min(MAX, Math.max(MIN, v)) - MIN) / (MAX - MIN) * 100;
+  const band = document.getElementById('band'); band.style.left = pct(100) + '%'; band.style.width = (pct(120) - pct(100)) + '%';
+  let times = [], count = 0;
+  function press() {
+    const now = performance.now();
+    if (times.length && now - times[times.length - 1] > 2000) { times = []; count = 0; }
+    times.push(now); if (times.length > 9) times.shift();
+    count += 1;
+    document.getElementById('cprN').textContent = count;
+    pad.classList.add('down'); setTimeout(() => pad.classList.remove('down'), 90);
+    if (times.length >= 6) {
+      const iv = []; for (let i = 1; i < times.length; i++) iv.push(times[i] - times[i - 1]);
+      const rate = Math.round(60000 / (iv.reduce((a, b) => a + b, 0) / iv.length));
+      document.getElementById('cprR').innerHTML = rate + '<small>회/분</small>';
+      document.getElementById('ndl').style.left = 'calc(' + pct(rate) + '% - 2px)';
+      document.getElementById('cprMsg').innerHTML = rate < 100 ? '<b>조금 느려요.</b> 더 빠르게 눌러 보세요.' : rate > 120 ? '<b>너무 빨라요.</b> 가슴이 완전히 올라올 시간을 주세요.' : '<b>좋아요!</b> 이 속도를 유지하세요. 분당 100~120회입니다.';
+    } else {
+      document.getElementById('cprMsg').textContent = (6 - times.length) + '번 더 누르면 속도가 나타납니다.';
+    }
+  }
+  pad.addEventListener('pointerdown', e => { e.preventDefault(); press(); });
+  pad.addEventListener('keydown', e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); if (!e.repeat) press(); } });
+  pad.addEventListener('click', e => e.preventDefault());
+  document.getElementById('cprReset').addEventListener('click', () => {
+    times = []; count = 0; document.getElementById('cprN').textContent = 0;
+    document.getElementById('cprR').innerHTML = '—<small>회/분</small>'; document.getElementById('ndl').style.left = '0';
+    document.getElementById('cprMsg').textContent = '단추를 6번 이상 누르면 속도가 나타납니다.';
+  });
+  let ac = null, metroIv = null;
+  const beat = document.getElementById('beat');
+  function tick() {
+    beat.classList.add('on'); setTimeout(() => beat.classList.remove('on'), 120);
+    if (!ac) return;
+    const o = ac.createOscillator(), g = ac.createGain();
+    o.frequency.value = 1000; g.gain.setValueAtTime(0.25, ac.currentTime); g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.08);
+    o.connect(g); g.connect(ac.destination); o.start(); o.stop(ac.currentTime + 0.09);
+  }
+  const metro = document.getElementById('metro');
+  function stopMetro() { clearInterval(metroIv); metroIv = null; metro.classList.remove('on'); metro.textContent = '♪ 박자 소리 켜기 (110회/분)'; }
+  metro.addEventListener('click', () => {
+    if (metroIv) { stopMetro(); return; }
+    try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); if (ac.state === 'suspended') ac.resume(); } catch (e) { ac = null; }
+    metroIv = setInterval(tick, 60000 / 110); tick();
+    metro.classList.add('on'); metro.textContent = '♪ 박자 소리 끄기';
+  });
+  Deck.onLeave((i, s) => { if (s.contains(metro)) stopMetro(); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>나 · 생애 주기별 건강 관리</title>
+<meta name="description" content="체육1 건강 홈트레이닝 — 학습지 나. 생애주기별 건강 과제, 최대 골량, 청소년기 건강을 결정하는 여섯 가지.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;800;900&family=IBM+Plex+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="deck.css">
+<style>
+  .life { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-radius: 14px; overflow: hidden; }
+  .life > div { padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; color: #fff; position: relative; }
+  .life > div:nth-child(1) { background: var(--teal); }
+  .life > div:nth-child(2) { background: var(--coral); }
+  .life > div:nth-child(3) { background: var(--navy); }
+  .life > div:nth-child(4) { background: var(--violet); }
+  .life b { font-family: var(--f-display); font-size: 28px; font-weight: 800; }
+  .life span { font-size: 16px; opacity: .85; }
+  .life .now { position: absolute; top: 12px; right: 12px; background: var(--sun); color: #17223A; font-weight: 800; font-size: 14px; border-radius: 999px; padding: 3px 10px; opacity: 1; }
+  .portrait .life { grid-template-columns: 1fr 1fr; }
+  .stage4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .stage4 .card .tag { align-self: flex-start; font-size: 14px; font-weight: 800; padding: 3px 10px; border-radius: 999px; background: var(--surface-2); }
+  .stage4 .card .tag.now { background: var(--sun); color: #17223A; }
+  .stage4 .card p { font-size: 19px; }
+  .portrait .stage4 { grid-template-columns: 1fr 1fr; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .compare .card .big { font-family: var(--f-display); font-weight: 800; font-size: 30px; color: var(--teal-ink); }
+  .portrait .compare { grid-template-columns: 1fr; }
+  .six { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .six .card p { font-size: 19px; }
+  .portrait .six { grid-template-columns: 1fr 1fr; }
+  .chk { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 18px; }
+  .chk .row6 { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; }
+  .chk .row6 b { font-size: 19px; }
+  .chk .row6 .seg .btn { padding: 6px 10px; font-size: 15px; }
+  .chk .row6.weak { border: 2px solid var(--coral); background: var(--coral-soft); }
+  .portrait .chk { grid-template-columns: 1fr; }
+  #chkOut { font-size: 20px; }
+  .lab-grid { display: grid; grid-template-columns: 330px 1fr; gap: 20px; flex: 1; min-height: 0; }
+  .portrait .lab-grid { grid-template-columns: 1fr; }
+  .ctrls { display: flex; flex-direction: column; gap: 12px; }
+  .ctrls .seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .ctrls .seg .btn { font-size: 15px; padding: 8px 4px; }
+  .ro3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .ro3 .readout .v { font-size: 30px; }
+  #boneChart { width: 100%; height: auto; display: block; }
+  #boneChart .grid { stroke: var(--lab-line); }
+  #boneChart .basec { fill: none; stroke: var(--lab-muted); stroke-width: 2.5; stroke-dasharray: 7 7; }
+  #boneChart .me { fill: none; stroke: var(--sun); stroke-width: 4.5; stroke-linejoin: round; }
+  #boneChart .risk { fill: var(--coral); opacity: .14; }
+  #boneChart .riskl { stroke: var(--coral); stroke-width: 2; stroke-dasharray: 5 6; }
+  #boneChart .age { stroke: var(--teal); stroke-width: 2; }
+  #boneChart .agedot { fill: var(--teal); }
+  #boneChart text { font-size: 14px; }
+  #boneChart .lg { font-size: 14px; font-weight: 700; }
+  #stageNow { font-size: 18px; }
+  #stageNow b { color: var(--sun); }
+  .rx { display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; }
+  .portrait .rx { grid-template-columns: 1fr; }
+  .rx .seg .btn { font-size: 16px; }
+  .moves { display: flex; flex-wrap: wrap; gap: 8px; }
+  .moves .btn { font-size: 16px; padding: 8px 12px; }
+  .moves .btn.warn { border-color: var(--coral); }
+  #rxOut { font-size: 20px; line-height: 1.6; }
+  #rxOut .lbl { font-size: 14px; font-weight: 800; color: var(--teal-ink); display: block; }
+  #rxWarn { color: var(--coral-ink); font-weight: 700; font-size: 18px; }
+</style>
+</head>
+<body data-title="나 · 생애 주기별 건강 관리">
+<main class="viewport"><div class="stage">
+
+<!-- 1 -->
+<section class="slide title-slide" data-sec="시작" data-label="생애 주기별 건강 관리">
+  <svg class="art" viewBox="0 0 470 300" aria-hidden="true">
+    <line class="a-base" x1="0" y1="250" x2="470" y2="250"/>
+    <path class="a-line" d="M10 240 C60 210 90 120 150 70 C190 44 230 42 260 48 C320 62 380 110 460 160"/>
+    <circle class="a-dot" cx="232" cy="43" r="8"/>
+    <text class="a-lbl" x="196" y="26">최대 골량</text>
+    <text class="a-lbl" x="20" y="276">10세</text><text class="a-lbl" x="214" y="276">30세</text><text class="a-lbl" x="420" y="276">70세</text>
+  </svg>
+  <span class="pill">학습지 나 · 5분 수업</span>
+  <h1>생애 주기별<br><span class="y">건강 관리</span></h1>
+  <p class="sub">지금 만드는 습관이 평생의 건강을 결정합니다.</p>
+  <p class="std">[12체육1-01-02] 생애주기별 건강 관리 방법에 따라 건강을 체계적으로 관리하여 자아 존중감을 높인다.</p>
+  <span class="letter" aria-hidden="true">나</span>
+  <aside class="notes"><p>한 사람의 몸은 평생 같은 상태가 아닙니다. 지금 우리가 있는 청소년기가 어떤 시기인지 알아보는 것이 오늘 수업의 목표라고 안내합니다.</p></aside>
+</section>
+
+<!-- 2 -->
+<section class="slide" data-sec="시작">
+  <header class="sh rise"><span class="sec"><b>0</b>학습지 지도</span><h2>학습지 나, 다섯 문항의 위치</h2></header>
+  <div class="wsmap rise">
+    <div class="it"><b>1번</b><span>생애주기와 건강 과제 연결하기<small>3~6장</small></span></div>
+    <div class="it"><b>2번</b><span>O / X 다섯 문항<small>11~12장</small></span></div>
+    <div class="it"><b>3번</b><span>청소년기 여섯 가지 자가 점검<small>9~10장</small></span></div>
+    <div class="it"><b>4번</b><span>가족 한 명에게 홈트레이닝 처방<small>13장</small></span></div>
+    <div class="it"><b>5번</b><span>스스로 점검<small>14장</small></span></div>
+    <div class="it"><b>실험</b><span>몸속 실험실 — 평생의 뼈 그래프<small>8장</small></span></div>
+  </div>
+  <aside class="notes"><p>학습지를 펴고, 오늘 강의 순서가 학습지 순서와 조금 다르다는 점(3번 자가 점검이 2번 O/X보다 먼저 나옴)을 알려 줍니다.</p></aside>
+</section>
+
+<!-- 3 -->
+<section class="slide" data-sec="1 생애주기">
+  <header class="sh rise"><span class="sec"><b>1</b>생애주기</span><h2>한 사람의 몸은 평생 같은 상태가 아니다</h2><p class="lead">네 시기마다 몸이 하는 일이 다르고, 그래서 챙겨야 할 것도 다르다.</p></header>
+  <div class="life rise">
+    <div><b>아동기</b><span>자라고, 움직임을 배우는 시기</span></div>
+    <div><span class="now">지금 우리!</span><b>청소년기</b><span>뼈와 근육이 가장 빨리 자라는 시기</span></div>
+    <div><b>성인기</b><span>만든 것을 지키는 시기</span></div>
+    <div><b>노년기</b><span>잃는 속도를 늦추는 시기</span></div>
+  </div>
+  <div class="memo step"><span class="lab">질문</span><p>할머니·할아버지와 내가 똑같이 버피테스트 15회 3세트를 해도 될까?</p></div>
+  <aside class="notes"><p>마지막 질문에 손을 들게 해 봅니다. "안 된다"가 대부분일 텐데, 그 이유를 오늘 수업이 끝날 때 설명할 수 있어야 한다고 예고합니다.</p></aside>
+</section>
+
+<!-- 4 -->
+<section class="slide" data-sec="1 생애주기">
+  <header class="sh rise"><div class="row"><span class="sec"><b>1</b>생애주기</span><span class="ws">학습지 1번</span></div><h2>생애주기마다 건강 과제가 다르다</h2></header>
+  <div class="stage4 body">
+    <div class="card"><span class="tag">많이 뛰어놀기</span><h3><span class="dot"></span>아동기</h3><p>기초 운동 능력과 성장 발달</p><p class="step">다양한 <span class="blank">놀이·활동</span> 경험</p></div>
+    <div class="card"><span class="tag now">지금 우리!</span><h3><span class="dot coral"></span>청소년기</h3><p><span class="blank">최대 골량</span> 형성, 바른 자세</p><p class="step">평생 갈 <span class="blank">생활 습관</span> 만들기</p></div>
+    <div class="card"><span class="tag">꾸준함 유지</span><h3><span class="dot navy"></span>성인기</h3><p><span class="blank">생활습관병</span> 예방</p><p class="step">스트레스와 체중 관리</p></div>
+    <div class="card"><span class="tag">안전이 우선</span><h3><span class="dot violet"></span>노년기</h3><p><span class="blank">근감소증·골다공증</span> 예방</p><p class="step">균형 능력과 <span class="blank">낙상</span> 방지</p></div>
+  </div>
+  <aside class="notes"><p>네 시기를 빠르게 훑고 빈칸을 엽니다. 정답은 다음 장 연결 문항에서 직접 확인합니다.</p></aside>
+</section>
+
+<!-- 5 -->
+<section class="slide" data-sec="1 생애주기">
+  <header class="sh rise"><div class="row"><span class="sec"><b>1</b>연결 문항</span><span class="ws">학습지 1번</span><span class="score"></span></div><h2>각 시기에 맞는 건강 과제를 골라 보세요</h2></header>
+  <div class="match">
+    <ul class="left">
+      <li data-a="㉯">아동기</li>
+      <li data-a="㉮">청소년기</li>
+      <li data-a="㉱">성인기</li>
+      <li data-a="㉰">노년기</li>
+    </ul>
+    <ul class="right">
+      <li data-k="㉮">최대 골량 형성, 평생 갈 생활 습관 만들기</li>
+      <li data-k="㉯">기초 운동 능력 발달, 다양한 놀이 경험</li>
+      <li data-k="㉰">근감소증·골다공증 예방, 낙상 방지</li>
+      <li data-k="㉱">생활습관병 예방, 스트레스·체중 관리</li>
+    </ul>
+  </div>
+  <p class="note-line">연결 정답 : 아동기 ㉯ · 청소년기 ㉮ · 성인기 ㉱ · 노년기 ㉰ — 보기 문장은 학습지와 표현이 조금 다를 수 있습니다.</p>
+  <aside class="notes"><p>학생들이 학습지를 채운 뒤 보기 단추를 눌러 확인합니다. 틀린 시기가 있으면 앞 장으로 돌아가 다시 봅니다.</p></aside>
+</section>
+
+<!-- 6 -->
+<section class="slide" data-sec="1 생애주기">
+  <header class="sh rise"><span class="sec"><b>1</b>같은 운동, 다른 처방</span><h2>대상이 달라지면 강도·횟수·보조 도구를 바꾼다</h2></header>
+  <div class="compare">
+    <div class="card"><h3><span class="dot coral"></span>고1 (청소년기)</h3><p class="big">버피테스트 15회 × 3세트</p><p class="small muted">심폐지구력과 순발력을 함께 키운다</p></div>
+    <div class="card step"><h3><span class="dot violet"></span>60대 조부모님 (노년기)</h3><p class="big">의자를 잡고 스쿼트 10회 × 2세트</p><p class="small muted">하체 근력과 균형, 낙상 예방이 목적</p></div>
+  </div>
+  <div class="memo step"><span class="lab">핵심</span><p>동작은 같아도 강도·횟수·보조 도구를 바꿔야 안전하고 효과적입니다.</p></div>
+  <aside class="notes"><p>"대상이 다르면 처방이 달라진다"는 핵심만 강조합니다. 3장의 질문(조부모님과 같은 버피?)에 대한 답이 여기 있습니다.</p></aside>
+</section>
+
+<!-- 7 -->
+<section class="slide" data-sec="2 최대 골량">
+  <header class="sh rise"><span class="sec"><b>2</b>왜 하필 지금이 중요할까?</span><h2>평생 쓸 <em>뼈의 양</em>이 정해지는 시기</h2></header>
+  <div class="split">
+    <svg class="chart" id="boneStatic" role="img" aria-label="나이에 따른 골량: 10세 45, 15세 75, 20세 98, 30세 100, 40세 96, 50세 88, 60세 78, 70세 68"></svg>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="card flat step"><h4><span class="dot coral"></span>10~20대</h4><p class="small">골량이 가장 빠르게 쌓이고 20대 초반에 최고치에 가까워진다.</p></div>
+      <div class="card flat step"><h4><span class="dot navy"></span>그 이후</h4><p class="small">최고치보다 더 올리기는 어렵고 서서히 줄어들기 시작한다.</p></div>
+      <div class="card flat step"><h4><span class="dot sun"></span>그래서</h4><p class="small">지금의 운동·수면·식사가 <strong>60년 뒤의 뼈</strong>를 결정한다.</p></div>
+    </div>
+  </div>
+  <p class="tiny">개념적 곡선입니다(30세 골량 = 100). 실제 값은 성별·유전·생활 습관에 따라 다릅니다.</p>
+  <aside class="notes"><p>"지금 쌓아 둔 만큼만 평생 쓴다"는 메시지가 핵심입니다.</p><p>체중 부하 운동(스쿼트·점프)이 뼈에 자극을 준다는 점을 덧붙입니다. 다음 장에서 직접 바꿔 봅니다.</p></aside>
+</section>
+
+<!-- 8 LAB -->
+<section class="slide lab-slide" data-sec="2 최대 골량" data-label="몸속 실험실 — 평생의 뼈 그래프">
+  <header class="sh rise"><span class="sec"><b>★</b>몸속 실험실</span><h2>10대의 운동이 <em>70세의 뼈</em>를 바꾼다</h2><p class="lead">두 가지 습관을 고르고, 나이 막대를 움직여 보세요.</p></header>
+  <div class="lab-grid">
+    <div class="ctrls">
+      <div class="panel"><div class="ctl-l">10대 때 운동·식사·수면</div>
+        <div class="seg" id="teenSeg"><button type="button" class="btn" data-v="90">부족</button><button type="button" class="btn on" data-v="100">보통</button><button type="button" class="btn" data-v="108">충분</button></div></div>
+      <div class="panel"><div class="ctl-l">성인 이후 운동 습관</div>
+        <div class="seg" id="adultSeg"><button type="button" class="btn" data-v="1.3">안 함</button><button type="button" class="btn on" data-v="1">가끔</button><button type="button" class="btn" data-v="0.65">꾸준히</button></div></div>
+      <div class="panel ro3">
+        <div class="readout"><span class="k">최대 골량</span><span class="v" id="rPeak">100</span></div>
+        <div class="readout"><span class="k">70세 골량</span><span class="v" id="r70">68</span></div>
+        <div class="readout"><span class="k">위험선 도달</span><span class="v" id="rRisk">없음</span></div>
+      </div>
+    </div>
+    <div class="panel" style="display:flex;flex-direction:column;gap:10px">
+      <svg id="boneChart" class="int" viewBox="0 0 720 300" role="img" aria-label="나이에 따른 골량 그래프"></svg>
+      <div><label class="ctl-l" for="ageR">나이 <span id="ageV" class="mono">16</span>세</label><input id="ageR" type="range" min="10" max="70" step="1" value="16"></div>
+      <p id="stageNow"></p>
+    </div>
+  </div>
+  <p class="disclaim">점선 = 교과서 기준 곡선, 노란 선 = 내가 고른 습관. 원리를 보여 주는 모식도이며 실제 수치가 아닙니다.</p>
+  <aside class="notes"><p>"부족 + 안 함"을 먼저 고르면 노란 선이 위험선 아래로 내려가는 나이가 나타납니다. 그다음 "충분 + 꾸준히"로 바꿔 비교합니다.</p><p>성인 이후 습관도 중요하지만, 출발점(최대 골량)이 높을수록 여유가 커진다는 점을 강조합니다.</p></aside>
+</section>
+
+<!-- 9 -->
+<section class="slide" data-sec="3 청소년기 여섯 가지">
+  <header class="sh rise"><div class="row"><span class="sec"><b>3</b>청소년기 건강을 결정하는 6가지</span><span class="ws">학습지 3번</span></div><h2>자가 점검의 기준입니다</h2></header>
+  <div class="six body">
+    <div class="card"><h4><span class="dot"></span>규칙적 운동</h4><p>주 3회 이상, 숨이 찰 정도로. 뼈·근육·심장이 함께 자란다.</p></div>
+    <div class="card"><h4><span class="dot sun"></span>영양 균형</h4><p>아침을 거르지 않기. 단백질과 칼슘을 챙기기.</p></div>
+    <div class="card"><h4><span class="dot violet"></span>수면·휴식</h4><p>7시간 이상. 잠자는 동안 <strong>성장호르몬</strong>이 나온다.</p></div>
+    <div class="card"><h4><span class="dot navy"></span>질병 예방</h4><p>손 씻기, 예방접종, 정기적인 건강검진.</p></div>
+    <div class="card"><h4><span class="dot coral"></span>약물·음주·흡연</h4><p>같은 양이라도 성인보다 영향이 훨씬 크다. <strong>거절할 용기.</strong></p></div>
+    <div class="card"><h4><span class="dot"></span>정신 건강</h4><p>스트레스를 운동·대화로 풀기. 혼자 참지 않기.</p></div>
+  </div>
+  <aside class="notes"><p>여섯 가지를 다 잘하라고 하면 아무것도 안 바뀝니다. 다음 장에서 "딱 하나만 고르기"를 합니다.</p></aside>
+</section>
+
+<!-- 10 -->
+<section class="slide" data-sec="3 청소년기 여섯 가지">
+  <header class="sh rise"><div class="row"><span class="sec"><b>3</b>나의 자가 점검</span><span class="ws">학습지 3번</span></div><h2>여섯 가지 중 <em>가장 약한 하나</em>를 찾아 봅시다</h2></header>
+  <div class="chk" id="chk"></div>
+  <div class="card tint" id="chkOut"><p>여섯 줄을 모두 고르면 가장 약한 하나와 이번 주에 해 볼 행동이 나타납니다.</p></div>
+  <aside class="notes"><p>학생 각자 폰으로 해도 되고, 교사가 한 학생의 답을 대신 눌러 시범을 보여도 됩니다. 나온 행동을 그대로 쓰기보다 자기 말로 바꿔 학습지에 쓰게 합니다.</p></aside>
+</section>
+
+<!-- 11 -->
+<section class="slide" data-sec="4 O/X">
+  <header class="sh rise"><div class="row"><span class="sec"><b>4</b>O / X 로 확인하기</span><span class="ws">학습지 2번</span><span class="score"></span></div><h2>손으로 O·X를 만들어 본 뒤 눌러 확인합니다</h2></header>
+  <ol class="ox">
+    <li data-a="O"><span class="t">청소년기는 일생 중 뼈에 칼슘이 가장 빠르게 쌓이는 시기이다.</span><span class="why">7장 그래프 — 10~20대에 골량이 가장 빠르게 쌓인다.</span></li>
+    <li data-a="X"><span class="t">성장기에 근력 운동을 하면 키가 자라지 않으므로 피해야 한다.</span><span class="why"><b>X</b> — 자기 체중을 이용한 근력 운동은 근육과 뼈에 좋은 자극을 준다.</span></li>
+    <li data-a="O"><span class="t">수면이 부족하면 성장호르몬 분비와 회복이 방해를 받는다.</span><span class="why">성장호르몬은 잠자는 동안 많이 나온다.</span></li>
+    <li data-a="O"><span class="t">아침을 거르면 집중력이 떨어지고 저녁 폭식으로 이어지기 쉽다.</span><span class="why">혈당이 낮아 집중이 어렵고, 배고픔이 저녁에 몰린다.</span></li>
+    <li data-a="O"><span class="t">같은 양의 음주·흡연이라도 청소년에게 미치는 영향이 더 크다.</span><span class="why">자라는 중인 뇌와 몸은 더 크게 영향을 받는다.</span></li>
+  </ol>
+  <aside class="notes"><p>정답 : O / X / O / O / O.</p><p>2번은 학생들이 가장 많이 틀리는 문항이니 시간을 조금 더 씁니다(다음 장).</p></aside>
+</section>
+
+<!-- 12 -->
+<section class="slide" data-sec="4 O/X">
+  <header class="sh rise"><span class="sec"><b>4</b>가장 많이 틀리는 2번</span><h2>근력 운동을 하면 키가 안 큰다? <em>아니다</em></h2></header>
+  <div class="cols c3 body">
+    <div class="card"><h4><span class="dot"></span>괜찮은 것</h4><p>스쿼트·플랭크·푸시업처럼 <strong>자기 체중</strong>을 이용한 근력 운동</p><p class="small muted">근육과 뼈에 알맞은 자극을 준다</p></div>
+    <div class="card"><h4><span class="dot coral"></span>주의할 것</h4><p>몸에 비해 <strong>과도한 고중량</strong> 기구 운동, 무너진 자세로 하는 반복</p><p class="small muted">다치기 쉽다 — 성장판이 아니라 자세와 무게의 문제</p></div>
+    <div class="card"><h4><span class="dot sun"></span>키에 정말 중요한 것</h4><p><strong>잠·영양·규칙적 운동</strong></p><p class="small muted">수면 중 성장호르몬, 단백질·칼슘, 뼈에 주는 자극</p></div>
+  </div>
+  <aside class="notes"><p>과도한 고중량 기구 운동만 주의하면 된다고 설명합니다. 오히려 적당한 근력 운동은 뼈를 튼튼하게 합니다.</p></aside>
+</section>
+
+<!-- 13 -->
+<section class="slide" data-sec="5 가족 처방">
+  <header class="sh rise"><div class="row"><span class="sec"><b>5</b>가족 맞춤 처방</span><span class="ws">학습지 4번</span></div><h2>가족 한 명에게 홈트레이닝을 처방해 보세요</h2><p class="lead">대상의 생애주기 → 동작 2가지 → 강도를 왜 그렇게 정했는지</p></header>
+  <div class="rx">
+    <div class="interactive" style="display:flex;flex-direction:column;gap:14px">
+      <div><p class="small" style="font-weight:700;margin-bottom:6px">① 누구에게?</p>
+        <div class="seg" id="rxWho">
+          <button type="button" class="btn" data-w="kid">동생 (아동기)</button>
+          <button type="button" class="btn" data-w="teen">형제·자매 (청소년기)</button>
+          <button type="button" class="btn" data-w="adult">부모님 (성인기)</button>
+          <button type="button" class="btn on" data-w="old">조부모님 (노년기)</button>
+        </div></div>
+      <div><p class="small" style="font-weight:700;margin-bottom:6px">② 동작 2가지</p><div class="moves" id="rxMoves"></div></div>
+      <p id="rxWarn"></p>
+    </div>
+    <div class="card tint" id="rxOut"></div>
+  </div>
+  <aside class="notes"><p>예시로 조부모님을 골라 시범을 보입니다. 버피테스트나 마운틴 클라이머를 고르면 경고가 뜨는 것을 보여 주고, 왜 그런지 물어봅니다.</p><p>학습지에는 화면 문장을 그대로 옮기지 말고, 실제 가족의 상황(무릎이 안 좋으시다 등)을 넣어 쓰게 합니다.</p></aside>
+</section>
+
+<!-- 14 -->
+<section class="slide end-slide" data-sec="마무리" data-label="오늘의 정리">
+  <header class="sh rise"><div class="row"><span class="sec"><b>✓</b>오늘의 정리</span><span class="ws" style="border-color:var(--sun);color:var(--sun)">학습지 4·5번</span></div><h2>"운동을 잘한다"보다 "나와 가족의 건강을 스스로 챙긴다"</h2></header>
+  <div class="split even">
+    <div class="card"><h4>스스로 점검</h4>
+      <ul class="checklist">
+        <li><label><input type="checkbox" id="ck-b1"> 생애주기별 과제를 연결할 수 있다</label></li>
+        <li><label><input type="checkbox" id="ck-b2"> 내 습관 중 고칠 것을 하나 정했다</label></li>
+        <li><label><input type="checkbox" id="ck-b3"> 가족 맞춤 처방을 설명할 수 있다</label></li>
+      </ul>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;justify-content:flex-end">
+      <p class="big">지금 쌓아 둔 만큼, 평생 쓴다.</p>
+      <p class="next">다음 시간 : <a href="nutrition.html">학습지 다 — 식이 관리 활동 →</a></p>
+    </div>
+  </div>
+  <aside class="notes"><p>"운동을 잘한다"보다 "나와 가족의 건강을 스스로 챙긴다"는 태도가 이 단원의 목표(자아 존중감)임을 짚어 주며 마칩니다.</p></aside>
+</section>
+
+</div></main>
+<script src="deck.js"></script>
+<script>
+(function () {
+  const AGES = [10, 15, 20, 30, 40, 50, 60, 70];
+  const BASE = [45, 75, 98, 100, 96, 88, 78, 68];
+  Chart.line(document.getElementById('boneStatic'), {
+    values: BASE, labels: AGES.map(a => a + '세'), min: 30, max: 110, ticks: [40, 60, 80, 100],
+    hot: [3], showVals: true, w: 640, h: 360, pad: { l: 50, r: 30, t: 30, b: 44 }
+  });
+
+  /* 8장 골량 실험실 */
+  function B(age) {
+    if (age <= AGES[0]) return BASE[0];
+    for (let i = 1; i < AGES.length; i++) if (age <= AGES[i]) return BASE[i - 1] + (BASE[i] - BASE[i - 1]) * (age - AGES[i - 1]) / (AGES[i] - AGES[i - 1]);
+    return BASE[BASE.length - 1];
+  }
+  const RISK = 60;
+  let peak = 100, decl = 1, age = 16;
+  const me = a => a <= 30 ? 45 + (B(a) - 45) * (peak - 45) / 55 : peak - (100 - B(a)) * decl;
+  const svg = document.getElementById('boneChart'), NS = 'http://www.w3.org/2000/svg';
+  const W = 720, H = 300, P = { l: 44, r: 16, t: 14, b: 34 }, MIN = 30, MAX = 115;
+  const X = a => P.l + (W - P.l - P.r) * (a - 10) / 60;
+  const Y = v => P.t + (H - P.t - P.b) * (1 - (v - MIN) / (MAX - MIN));
+  const mk = (tag, at, txt) => { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); if (txt != null) e.textContent = txt; svg.appendChild(e); return e; };
+  const STAGES = [
+    [12, '아동기', '많이 뛰어놀며 기초 운동 능력을 기르는 시기'],
+    [18, '청소년기', '골량이 가장 빠르게 쌓이는 시기 — 지금 우리!'],
+    [64, '성인기', '만든 뼈를 지키는 시기 — 생활습관병 예방'],
+    [99, '노년기', '근감소증·골다공증 예방, 낙상 방지가 우선']
+  ];
+  function draw() {
+    svg.innerHTML = '';
+    mk('rect', { x: P.l, y: Y(RISK), width: W - P.l - P.r, height: Y(MIN) - Y(RISK), class: 'risk' });
+    mk('line', { x1: P.l, x2: W - P.r, y1: Y(RISK), y2: Y(RISK), class: 'riskl' });
+    mk('text', { x: W - P.r - 6, y: Y(RISK) + 20, 'text-anchor': 'end', class: 'lg', style: 'fill:var(--coral-ink)' }, '골다공증 위험 구간');
+    [40, 60, 80, 100].forEach(v => { mk('line', { x1: P.l, x2: W - P.r, y1: Y(v), y2: Y(v), class: 'grid' }); mk('text', { x: P.l - 8, y: Y(v) + 5, 'text-anchor': 'end' }, v); });
+    for (let a = 10; a <= 70; a += 10) mk('text', { x: X(a), y: H - 10, 'text-anchor': 'middle' }, a + '세');
+    const bp = [], mp = [];
+    for (let a = 10; a <= 70; a += 0.5) { bp.push(X(a).toFixed(1) + ',' + Y(B(a)).toFixed(1)); mp.push(X(a).toFixed(1) + ',' + Y(me(a)).toFixed(1)); }
+    mk('polyline', { points: bp.join(' '), class: 'basec' });
+    mk('polyline', { points: mp.join(' '), class: 'me' });
+    mk('line', { x1: X(age), x2: X(age), y1: P.t, y2: H - P.b, class: 'age' });
+    mk('circle', { cx: X(age), cy: Y(me(age)), r: 7, class: 'agedot' });
+    document.getElementById('rPeak').textContent = Math.round(peak);
+    document.getElementById('r70').textContent = Math.round(me(70));
+    let cross = null; for (let a = 30; a <= 70; a += 0.5) if (me(a) < RISK) { cross = a; break; }
+    document.getElementById('rRisk').innerHTML = cross ? Math.round(cross) + '<small>세</small>' : '없음';
+    document.getElementById('ageV').textContent = age;
+    const st = STAGES.find(s => age <= s[0]);
+    document.getElementById('stageNow').innerHTML = '<b>' + age + '세 · ' + st[1] + '</b> — ' + st[2] + ' · 골량 ' + Math.round(me(age));
+  }
+  function seg(id, fn) {
+    document.getElementById(id).addEventListener('click', e => {
+      const b = e.target.closest('[data-v]'); if (!b) return;
+      document.querySelectorAll('#' + id + ' .btn').forEach(x => x.classList.toggle('on', x === b));
+      fn(+b.dataset.v); draw();
+    });
+  }
+  seg('teenSeg', v => peak = v);
+  seg('adultSeg', v => decl = v);
+  document.getElementById('ageR').addEventListener('input', e => { age = +e.target.value; draw(); });
+  draw();
+
+  /* 10장 자가 점검 */
+  const SIX = [
+    ['규칙적 운동', '월·수·금 저녁 20분, 오늘 배운 홈트 동작 3개 해 보기'],
+    ['영양 균형', '아침에 우유 한 컵과 바나나 하나라도 먹고 등교하기'],
+    ['수면·휴식', '자기 30분 전에 휴대폰을 책상 위에 두고 눕기'],
+    ['질병 예방', '급식 전 손 씻기, 예방접종 기록 한 번 확인하기'],
+    ['약물·음주·흡연', '권유받았을 때 쓸 거절 문장 하나를 미리 정해 두기'],
+    ['정신 건강', '힘들 때 이야기할 사람 한 명을 정해 두기']
+  ];
+  const LV = ['잘함', '보통', '부족'];
+  const chk = document.getElementById('chk');
+  const val = {};
+  chk.innerHTML = SIX.map((s, i) => '<div class="row6 interactive" data-i="' + i + '"><b>' + s[0] + '</b><span class="seg">' +
+    LV.map((l, j) => '<button type="button" class="btn" data-j="' + j + '">' + l + '</button>').join('') + '</span></div>').join('');
+  chk.addEventListener('click', e => {
+    const b = e.target.closest('[data-j]'); if (!b) return;
+    const row = b.closest('.row6'); const i = +row.dataset.i;
+    val[i] = +b.dataset.j;
+    row.querySelectorAll('.btn').forEach(x => x.classList.toggle('on', x === b));
+    const done = Object.keys(val).length;
+    chk.querySelectorAll('.row6').forEach(r => r.classList.remove('weak'));
+    const out = document.getElementById('chkOut');
+    if (done < SIX.length) { out.innerHTML = '<p>' + done + ' / 6 — 남은 줄도 골라 주세요.</p>'; return; }
+    const worst = Math.max(...Object.values(val));
+    if (worst === 0) { out.innerHTML = '<p><strong>여섯 가지 모두 잘하고 있어요.</strong> 그중 가장 자신 없는 하나를 골라 지금 수준을 지키는 방법을 학습지에 적어 봅시다.</p>'; return; }
+    const idx = SIX.findIndex((s, k) => val[k] === worst);
+    chk.querySelector('[data-i="' + idx + '"]').classList.add('weak');
+    out.innerHTML = '<p>가장 먼저 바꿀 것 : <strong>' + SIX[idx][0] + '</strong></p><p>이번 주 행동 예 — ' + SIX[idx][1] + '</p>';
+  });
+
+  /* 13장 가족 처방 */
+  const MOVES = ['스쿼트', '플랭크', '버피테스트', '무릎 싯업', '덤벨컬', '사이드 래터럴 레이즈', '마운틴 클라이머', '크런치'];
+  const RX = {
+    kid: { who: '동생 (아동기)', avoid: ['덤벨컬', '사이드 래터럴 레이즈'], avoidWhy: '아동기에는 기구보다 자기 체중 놀이가 알맞아요.',
+      dose: '20~30초씩 놀이처럼, 숨이 차도 즐거운 정도', why: '기초 운동 능력과 다양한 움직임 경험이 목적이라, 정해진 횟수보다 즐겁게 여러 번 하는 것이 중요하다.' },
+    teen: { who: '형제·자매 (청소년기)', avoid: [], avoidWhy: '',
+      dose: '주 3회 이상, 15회 × 3세트, 숨이 차지만 대화는 가능한 정도', why: '최대 골량과 근육을 만드는 시기라 근력과 심폐를 함께 자극하는 것이 좋다.' },
+    adult: { who: '부모님 (성인기)', avoid: [], avoidWhy: '',
+      dose: '10분씩 하루 두 번, 12회 × 2~3세트', why: '바쁜 일정에도 꾸준히 할 수 있어야 생활습관병 예방과 스트레스 관리에 도움이 된다.' },
+    old: { who: '조부모님 (노년기)', avoid: ['버피테스트', '마운틴 클라이머'], avoidWhy: '점프하거나 빠르게 바닥을 짚는 동작은 낙상 위험이 커요. 다른 동작을 골라 보세요.',
+      dose: '의자나 벽을 잡고 10회 × 2세트, 천천히', why: '근감소증과 낙상을 막는 것이 목적이라, 하체 근력과 균형을 안전하게 기르는 것이 우선이다.' }
+  };
+  let who = 'old'; let picks = ['스쿼트', '사이드 래터럴 레이즈'];
+  const mv = document.getElementById('rxMoves');
+  mv.innerHTML = MOVES.map(m => '<button type="button" class="btn" data-m="' + m + '">' + m + '</button>').join('');
+  function renderRx() {
+    const r = RX[who];
+    mv.querySelectorAll('.btn').forEach(b => { b.classList.toggle('on', picks.includes(b.dataset.m)); b.classList.toggle('warn', r.avoid.includes(b.dataset.m)); });
+    const bad = picks.filter(p => r.avoid.includes(p));
+    document.getElementById('rxWarn').textContent = bad.length ? bad.join(', ') + ' — ' + r.avoidWhy : '';
+    const out = document.getElementById('rxOut');
+    if (picks.length < 2) { out.innerHTML = '<p>동작을 2가지 골라 주세요. (지금 ' + picks.length + '개)</p>'; return; }
+    out.innerHTML = '<p><span class="lbl">대상</span>' + r.who + '</p><p><span class="lbl">동작</span>' + picks.join(' · ') + '</p>' +
+      '<p><span class="lbl">강도</span>' + r.dose + '</p><p><span class="lbl">이렇게 정한 이유</span>' + r.why + '</p>';
+  }
+  document.getElementById('rxWho').addEventListener('click', e => {
+    const b = e.target.closest('[data-w]'); if (!b) return;
+    who = b.dataset.w; document.querySelectorAll('#rxWho .btn').forEach(x => x.classList.toggle('on', x === b)); renderRx();
+  });
+  mv.addEventListener('click', e => {
+    const b = e.target.closest('[data-m]'); if (!b) return;
+    const m = b.dataset.m;
+    if (picks.includes(m)) picks = picks.filter(p => p !== m); else { picks.push(m); if (picks.length > 2) picks.shift(); }
+    renderRx();
+  });
+  renderRx();
+})();
+</script>
+</body>
+</html>

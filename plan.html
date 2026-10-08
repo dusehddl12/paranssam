@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>마 · 홈트레이닝 실천 계획서</title>
+<meta name="description" content="체육1 건강 홈트레이닝 — 학습지 마. 진단·처방·목표·기록, FITT 원리, RPE, 루틴 순서, 측정 가능한 목표.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700;800;900&family=IBM+Plex+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="deck.css">
+<style>
+  .recap { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .recap a.card { text-decoration: none; color: inherit; }
+  .recap a.card:hover { border-color: var(--teal); }
+  .recap .lt { font-family: var(--f-display); font-weight: 900; font-size: 44px; line-height: 1; color: var(--coral); }
+  .recap p { font-size: 18px; }
+  .recap .to { margin-top: auto; font-weight: 800; color: var(--teal-ink); font-size: 18px; }
+  .portrait .recap { grid-template-columns: 1fr 1fr; }
+  .fitt { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .fitt .L { font-family: var(--f-display); font-weight: 900; font-size: 70px; line-height: 1; color: var(--teal); }
+  .fitt .card:nth-child(2) .L { color: var(--coral); } .fitt .card:nth-child(3) .L { color: var(--violet); } .fitt .card:nth-child(4) .L { color: var(--sun); }
+  .fitt .en { font-family: var(--f-mono); font-size: 15px; color: var(--muted); }
+  .fitt .val { font-size: 26px; font-weight: 800; font-family: var(--f-display); }
+  .fitt p { font-size: 17px; }
+  .portrait .fitt { grid-template-columns: 1fr 1fr; }
+  .rpe { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 6px; }
+  .rpe button { height: 92px; border: 0; border-radius: 10px; cursor: pointer; font-family: var(--f-mono); font-weight: 700; font-size: 30px; color: #17223A; position: relative; transition: transform .15s; }
+  .rpe button:hover { transform: translateY(-3px); }
+  .rpe button.on { outline: 4px solid var(--ink); outline-offset: 2px; }
+  .rpe-lbl { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; text-align: center; font-weight: 700; font-size: 17px; color: var(--muted); }
+  .rpe-band { position: relative; height: 34px; }
+  .rpe-band span { position: absolute; left: 40%; width: 30%; top: 0; height: 100%; border: 2px solid var(--teal); border-top: 0; border-radius: 0 0 10px 10px; display: grid; place-items: center; font-weight: 800; color: var(--teal-ink); font-size: 16px; }
+  #rpeOut { font-size: 21px; }
+  .lab-grid { display: grid; grid-template-columns: 360px 1fr; gap: 18px; flex: 1; min-height: 0; }
+  .portrait .lab-grid { grid-template-columns: 1fr; }
+  .ctl { display: flex; flex-direction: column; gap: 4px; }
+  .ctl .top { display: flex; justify-content: space-between; align-items: baseline; }
+  .ctl .top b { font-family: var(--f-mono); font-size: 20px; color: var(--sun); }
+  .ctl .lbl { font-size: 15px; font-weight: 800; color: var(--lab-muted); }
+  .ctl .seg { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+  .ctl .seg .btn { font-size: 14px; padding: 7px 2px; }
+  .ctl .seg.t3 { grid-template-columns: repeat(3, 1fr); }
+  .week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+  .week div { border-radius: 8px; padding: 8px 4px; text-align: center; background: var(--lab-line); font-size: 14px; color: var(--lab-muted); display: flex; flex-direction: column; gap: 2px; }
+  .week div b { font-size: 16px; color: var(--lab-ink); }
+  .week div.on { background: var(--teal); color: #fff; }
+  .week div.on b { color: #fff; }
+  .rows4 { display: flex; flex-direction: column; gap: 6px; }
+  .rows4 .r { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: start; font-size: 16px; line-height: 1.45; }
+  .rows4 .r .L { font-family: var(--f-display); font-weight: 900; font-size: 20px; text-align: center; border-radius: 6px; color: #17223A; }
+  .rows4 .r .L.g { background: var(--teal); color: #fff; } .rows4 .r .L.w { background: var(--sun); } .rows4 .r .L.b { background: var(--coral); color: #fff; }
+  #rxLine { font-size: 18px; font-weight: 700; color: var(--sun); }
+  .rules3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .rules3 .card .big { font-family: var(--f-display); font-weight: 900; font-size: 26px; }
+  .rules3 p { font-size: 18px; }
+  .portrait .rules3 { grid-template-columns: 1fr; }
+  .goal { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .portrait .goal { grid-template-columns: 1fr; }
+  .goal .f { display: grid; grid-template-columns: 120px 1fr; gap: 10px 14px; align-items: center; font-size: 19px; font-weight: 700; }
+  .goal select, .goal input { font-size: 20px; padding: 8px 10px; border-radius: 10px; border: 2px solid var(--line); background: var(--surface); min-width: 0; width: 100%; }
+  .goal .pair { display: flex; gap: 8px; }
+  .goal .pair input { flex: 1; font-family: var(--f-mono); }
+  .goal .pair select { flex: 0 0 90px; }
+  #goalOut .sent { font-family: var(--f-display); font-weight: 800; font-size: 30px; line-height: 1.35; }
+  #goalChecks { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 18px; }
+  #goalChecks li.ok::before { content: "✓ "; color: var(--good); font-weight: 800; }
+  #goalChecks li.no::before { content: "! "; color: var(--bad); font-weight: 800; }
+  .obs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .obs .card .say { font-size: 22px; font-weight: 800; font-family: var(--f-display); }
+  .obs .card .alt { font-size: 19px; }
+  .obs .card .alt::before { content: "대안 → "; color: var(--teal-ink); font-weight: 800; }
+  .portrait .obs { grid-template-columns: 1fr; }
+  .sign { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; font-size: 22px; font-weight: 700; }
+  .sign input { flex: 0 1 260px; min-width: 0; background: transparent; border: 0; border-bottom: 2px solid currentColor; padding: 6px 4px; font-size: 26px; font-weight: 700; outline: none; font-family: var(--f-display); }
+</style>
+</head>
+<body data-title="마 · 홈트레이닝 실천 계획서">
+<main class="viewport"><div class="stage">
+
+<!-- 1 -->
+<section class="slide title-slide" data-sec="시작" data-label="홈트레이닝 실천 계획서">
+  <svg class="art" viewBox="0 0 470 300" aria-hidden="true">
+    <line class="a-base" x1="0" y1="250" x2="470" y2="250"/>
+    <path class="a-line" d="M10 210 L110 210 L110 170 L220 170 L220 128 L330 128 L330 84 L460 84"/>
+    <circle class="a-dot" cx="440" cy="84" r="8"/>
+    <text class="a-lbl" x="20" y="240">1주 30초</text><text class="a-lbl" x="130" y="200">2주</text><text class="a-lbl" x="240" y="158">3주</text><text class="a-lbl" x="350" y="70">4주 60초</text>
+  </svg>
+  <span class="pill">학습지 마 · 5분 수업</span>
+  <h1>홈트레이닝<br><span class="y">실천 계획서</span></h1>
+  <p class="sub">계획이 없으면 운동은 사흘을 넘기지 못합니다.</p>
+  <p class="std">[12체육1-01-02] 생애주기별 건강 관리 방법에 따라 건강을 체계적으로 관리하여 자아 존중감을 높인다.</p>
+  <span class="letter" aria-hidden="true">마</span>
+  <aside class="notes"><p>지금까지 배운 원리(가~라)를 하나의 계획서로 모으는 시간입니다.</p><p>오늘 만든 계획을 4주간 실제로 실천하고 학습지 바에 기록한다고 안내합니다.</p></aside>
+</section>
+
+<!-- 2 -->
+<section class="slide" data-sec="시작">
+  <header class="sh rise"><span class="sec"><b>0</b>학습지 지도</span><h2>학습지 마, 계획서의 칸과 강의 위치</h2></header>
+  <div class="wsmap rise">
+    <div class="it"><b>1번</b><span>진단 — 지금 내 운동 빈도와 약한 체력 요소<small>4장 · 8장 실험실</small></span></div>
+    <div class="it"><b>2번</b><span>처방 — FITT 네 칸 채우기<small>6~8장</small></span></div>
+    <div class="it"><b>3번</b><span>목표 — 4주 뒤 무엇을 얼마나<small>11장</small></span></div>
+    <div class="it"><b>4번</b><span>루틴 — 동작 순서와 세트<small>9~10장</small></span></div>
+    <div class="it"><b>방해 요인</b><span>미리 적는 대안<small>12장</small></span></div>
+    <div class="it"><b>서명</b><span>계획서 완성<small>14장</small></span></div>
+  </div>
+  <aside class="notes"><p>계획서 칸 순서대로 강의가 진행됩니다. 오늘 수업이 끝나면 서명까지 마쳐야 합니다.</p></aside>
+</section>
+
+<!-- 3 -->
+<section class="slide" data-sec="시작">
+  <header class="sh rise"><span class="sec"><b>0</b>지금까지 배운 것</span><h2>가~라에서 배운 것이 <em>계획서의 근거</em>가 된다</h2></header>
+  <div class="recap body">
+    <a class="card" href="health-effects.html#8"><span class="lt">가</span><p>초과회복 꼭대기에서 다시 자극</p><p class="to">→ 빈도 : 주 3회</p></a>
+    <a class="card" href="life-cycle.html#8"><span class="lt">나</span><p>청소년기는 최대 골량을 쌓는 시기</p><p class="to">→ 형태 : 근력 + 심폐</p></a>
+    <a class="card" href="nutrition.html#7"><span class="lt">다</span><p>운동 전 탄수화물, 후 탄수화물 + 단백질</p><p class="to">→ 운동 시간대와 간식</p></a>
+    <a class="card" href="safety.html#12"><span class="lt">라</span><p>준비운동 5분, 통증이면 멈춤</p><p class="to">→ 루틴 앞뒤 5분</p></a>
+  </div>
+  <aside class="notes"><p>카드를 누르면 해당 강의의 그 장으로 이동합니다. 복습이 필요한 반이면 잠깐 다녀와도 좋습니다.</p></aside>
+</section>
+
+<!-- 4 -->
+<section class="slide" data-sec="1 좋은 계획">
+  <header class="sh rise"><div class="row"><span class="sec"><b>1</b>좋은 계획은 이 순서로 만든다</span><span class="ws">학습지 1~4번</span></div><h2>진단 → 처방 → 목표 → 기록</h2></header>
+  <div class="flow" style="--n:4">
+    <div><div class="chev">진단</div><p class="desc">지금 내 운동 빈도와 가장 약한 체력 요소는?</p></div>
+    <div class="step"><div class="chev coral">처방</div><p class="desc">FITT 원리로 빈도·강도·시간·형태 정하기</p></div>
+    <div class="step"><div class="chev">목표</div><p class="desc">4주 뒤 무엇을 얼마나 할 수 있게?</p></div>
+    <div class="step"><div class="chev teal">기록</div><p class="desc">실천 일지로 지켰는지 확인하기</p></div>
+  </div>
+  <div class="card flat step"><p><strong>진단 질문</strong> — 지난주에 숨이 찰 만큼 운동한 날은 며칠? 근력·근지구력·심폐지구력·유연성 중 가장 자신 없는 것은?</p></div>
+  <aside class="notes"><p>진단 질문 두 개를 학습지 1번에 바로 적게 합니다.</p></aside>
+</section>
+
+<!-- 5 -->
+<section class="slide" data-sec="1 좋은 계획">
+  <header class="sh rise"><div class="row"><span class="sec"><b>1</b>좋은 계획, 고칠 계획</span><span class="score"></span></div><h2>어느 쪽일까? <em>확인할 수 있는지</em>가 기준</h2></header>
+  <ol class="ox" data-labels="좋은 계획|고칠 계획">
+    <li data-a="고칠 계획"><span class="t">"열심히 운동하겠다"</span><span class="why">얼마나 했는지 확인할 수 없다.</span></li>
+    <li data-a="좋은 계획"><span class="t">"주 3회, 회당 20분"</span><span class="why">빈도와 시간이 숫자로 정해져 확인할 수 있다.</span></li>
+    <li data-a="고칠 계획"><span class="t">"매일 2시간씩 하겠다"</span><span class="why">지킬 수 없고 회복할 틈도 없다. 사흘 만에 무너진다.</span></li>
+    <li data-a="좋은 계획"><span class="t">"플랭크 30초 → 60초"</span><span class="why">지금 기록과 목표가 숫자로 있다.</span></li>
+    <li data-a="고칠 계획"><span class="t">"한 달 안에 복근 만들기"</span><span class="why">겉모습은 확인할 기준이 없다. 동작과 기록으로 바꾼다.</span></li>
+    <li data-a="좋은 계획"><span class="t">"스쿼트 15회 3세트 완수"</span><span class="why">했는지 안 했는지 바로 알 수 있다.</span></li>
+  </ol>
+  <aside class="notes"><p>"고칠 계획"이 왜 나쁜지 학생에게 물어보세요. "확인할 수 없어서"라는 답이 나오면 성공입니다.</p></aside>
+</section>
+
+<!-- 6 -->
+<section class="slide" data-sec="2 FITT 처방">
+  <header class="sh rise"><div class="row"><span class="sec"><b>2</b>FITT 원리로 처방하기</span><span class="ws">학습지 2번</span></div><h2>네 칸을 채우면 운동 처방이 완성됩니다</h2></header>
+  <div class="fitt body">
+    <div class="card"><span class="L">F</span><span class="en">Frequency · 빈도</span><span class="val"><span class="blank">주 3회 이상</span></span><p>주 2회 이하는 효과가 잘 안 난다</p></div>
+    <div class="card"><span class="L">I</span><span class="en">Intensity · 강도</span><span class="val"><span class="blank">RPE 5~7</span></span><p>숨은 차지만 짧은 대화는 가능</p></div>
+    <div class="card"><span class="L">T</span><span class="en">Time · 시간</span><span class="val"><span class="blank">1회 20분 이상</span></span><p>짧게 자주도 괜찮다</p></div>
+    <div class="card"><span class="L">T</span><span class="en">Type · 형태</span><span class="val"><span class="blank">근력 + 심폐</span></span><p>약한 체력 요소를 우선</p></div>
+  </div>
+  <aside class="notes"><p>영어 첫 글자만 보고 무엇일지 맞혀 보게 한 뒤 빈칸을 엽니다.</p></aside>
+</section>
+
+<!-- 7 -->
+<section class="slide" data-sec="2 FITT 처방">
+  <header class="sh rise"><div class="row"><span class="sec"><b>2</b>강도(RPE) 어떻게 정할까?</span><span class="ws">학습지 2번 · 바</span></div><h2>내가 느끼는 힘듦을 <em>1~10</em>으로</h2><p class="lead">숫자를 눌러 보세요.</p></header>
+  <div style="display:flex;flex-direction:column;gap:8px" class="interactive">
+    <div class="rpe" id="rpe"></div>
+    <div class="rpe-lbl"><span>아주 쉬움</span><span>가볍다</span><span>조금 힘들다</span><span>많이 힘들다</span><span>한계</span></div>
+    <div class="rpe-band"><span>홈트 적정 5~7</span></div>
+  </div>
+  <div class="card tint" id="rpeOut"><p>홈트레이닝은 5~7 사이가 알맞습니다. 매번 9~10으로 하면 회복이 안 되어 오히려 체력이 떨어집니다.</p></div>
+  <aside class="notes"><p>RPE는 학습지 바(실천 일지)에서 매회 기록하는 항목입니다. 여기서 확실히 이해시켜 두면 일지 작성이 쉬워집니다.</p><p>"말하기 시험": 운동하면서 한 문장을 말할 수 있으면 5~6, 단어만 겨우 나오면 7~8, 말이 안 나오면 9~10.</p></aside>
+</section>
+
+<!-- 8 LAB -->
+<section class="slide lab-slide" data-sec="2 FITT 처방" data-label="몸속 실험실 — FITT 처방 설계기">
+  <header class="sh rise"><span class="sec"><b>★</b>몸속 실험실</span><h2>FITT 처방 설계기 — <em>지킬 수 있는 일주일</em>을 만들자</h2><p class="lead">지금 화면은 의욕만 앞선 계획입니다. 네 칸이 모두 청록색이 되게 고쳐 보세요.</p></header>
+  <div class="lab-grid">
+    <div class="panel" style="display:flex;flex-direction:column;gap:12px">
+      <div class="ctl"><span class="lbl">진단 · 가장 약한 체력 요소</span>
+        <div class="seg" id="weak"><button type="button" class="btn on" data-v="str">근력</button><button type="button" class="btn" data-v="end">근지구력</button><button type="button" class="btn" data-v="car">심폐</button><button type="button" class="btn" data-v="flx">유연성</button></div></div>
+      <div class="ctl"><div class="top"><span class="lbl">F 빈도</span><b id="fV">주 7회</b></div><input type="range" id="fR" min="1" max="7" value="7" aria-label="빈도"></div>
+      <div class="ctl"><div class="top"><span class="lbl">I 강도</span><b id="iV">RPE 9</b></div><input type="range" id="iR" min="1" max="10" value="9" aria-label="강도"></div>
+      <div class="ctl"><div class="top"><span class="lbl">T 시간</span><b id="tV">60분</b></div><input type="range" id="tR" min="5" max="60" step="5" value="60" aria-label="시간"></div>
+      <div class="ctl"><span class="lbl">T 형태 (여러 개 고르기)</span>
+        <div class="seg t3" id="typ"><button type="button" class="btn on" data-v="str">근력</button><button type="button" class="btn" data-v="car">심폐</button><button type="button" class="btn" data-v="flx">유연성</button></div></div>
+    </div>
+    <div class="panel" style="display:flex;flex-direction:column;gap:12px">
+      <div class="week" id="week"></div>
+      <div class="rows4" id="rows4"></div>
+      <p id="rxLine"></p>
+    </div>
+  </div>
+  <aside class="notes"><p>처음 화면은 "매일 1시간, 한계까지, 근력만"인 계획입니다. 학생들과 함께 하나씩 고쳐 네 칸을 모두 청록색으로 만듭니다.</p><p>마지막 줄의 처방 문장을 학습지 2번에 옮겨 적게 합니다. 약한 체력 요소를 바꾸면 추천 동작도 바뀝니다.</p></aside>
+</section>
+
+<!-- 9 -->
+<section class="slide" data-sec="3 루틴">
+  <header class="sh rise"><div class="row"><span class="sec"><b>3</b>루틴 짜기 — 순서에도 원리가 있다</span><span class="ws">학습지 4번</span></div><h2>그대로 베끼지 말고 내 체력에 맞게 바꾸세요</h2></header>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>순서</th><th>동작</th><th>횟수 × 세트</th><th>왜 이 자리에?</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>스쿼트</td><td class="mono">15회 × 3세트</td><td>큰 근육 먼저 — 힘이 남아 있을 때</td></tr>
+        <tr class="step"><td>2</td><td>마운틴 클라이머</td><td class="mono">30초 × 3세트</td><td>심박수를 끌어올린다</td></tr>
+        <tr class="step"><td>3</td><td>덤벨컬</td><td class="mono">12회 × 3세트</td><td>작은 근육은 뒤에</td></tr>
+        <tr class="step"><td>4</td><td>크런치</td><td class="mono">20회 × 3세트</td><td>코어는 후반부에</td></tr>
+        <tr class="step"><td>5</td><td>플랭크</td><td class="mono">40초 × 3세트</td><td>마무리 버티기 — 남은 힘 소진</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <aside class="notes"><p>학생마다 고른 5동작이 다르므로, 표는 "순서의 원리"를 보여 주는 예시로만 씁니다. 큰 근육 먼저라는 원칙만 확실히 남기세요.</p></aside>
+</section>
+
+<!-- 10 -->
+<section class="slide" data-sec="3 루틴">
+  <header class="sh rise"><div class="row"><span class="sec"><b>3</b>순서의 세 가지 원칙</span><span class="ws">학습지 4번</span></div><h2>계획서에도 꼭 적어 두기</h2></header>
+  <div class="rules3">
+    <div class="card"><p class="big">큰 근육 → 작은 근육</p><p>스쿼트를 마지막에 하면 자세가 무너져 다치기 쉽다.</p></div>
+    <div class="card step"><p class="big">세트 간 휴식 30~60초</p><p>너무 길면 심박수가 떨어지고, 너무 짧으면 자세가 무너진다.</p></div>
+    <div class="card step"><p class="big">준비운동 5분 · 정리운동 5분</p><p>루틴 앞뒤에 반드시 넣는다.</p></div>
+  </div>
+  <div class="card flat step"><p class="small" style="font-weight:700">세트 간 휴식 타이머 — 집에서 운동할 때도 써 보세요</p><div class="timer" data-secs="30|45|60"></div></div>
+  <aside class="notes"><p>휴식 타이머로 30초가 얼마나 짧은지, 60초가 얼마나 긴지 직접 느껴 보게 합니다.</p></aside>
+</section>
+
+<!-- 11 -->
+<section class="slide" data-sec="4 목표">
+  <header class="sh rise"><div class="row"><span class="sec"><b>4</b>측정 가능한 목표</span><span class="ws">학습지 3번</span></div><h2>4주 뒤, <em>무엇을 얼마나</em> 할 수 있게?</h2></header>
+  <div class="goal interactive">
+    <div class="card" style="gap:14px">
+      <div class="f">
+        <label for="gMove">동작</label>
+        <select id="gMove"><option>플랭크</option><option>스쿼트</option><option>버피테스트</option><option>무릎 싯업</option><option>덤벨컬</option><option>사이드 래터럴 레이즈</option><option>마운틴 클라이머</option><option>크런치</option></select>
+        <label for="gNow">지금 기록</label>
+        <span class="pair"><input id="gNow" type="number" min="1" value="30"><select id="gUnit" aria-label="단위"><option>초</option><option>회</option></select></span>
+        <label for="gGoal">4주 뒤 목표</label>
+        <span class="pair"><input id="gGoal" type="number" min="1" value="60"><span id="gUnit2" style="align-self:center">초</span></span>
+      </div>
+    </div>
+    <div class="card tint" id="goalOut" style="gap:12px">
+      <p class="sent" id="gSent"></p>
+      <ul id="goalChecks"></ul>
+    </div>
+  </div>
+  <aside class="notes"><p>지금 기록은 실제로 재 본 숫자를 쓰게 합니다. 오늘 수업 중 1분 동안 재 보는 시간을 주면 좋습니다.</p><p>목표가 지금의 두 배를 넘으면 경고가 뜹니다. 4주 안에 지킬 수 있는 만큼이 좋은 목표입니다.</p></aside>
+</section>
+
+<!-- 12 -->
+<section class="slide" data-sec="5 방해 요인">
+  <header class="sh rise"><span class="sec"><b>5</b>방해 요인과 대안</span><h2>방해 요인을 <em>미리 적는 사람</em>이 끝까지 갑니다</h2></header>
+  <div class="obs body">
+    <div class="card"><p class="say">"시간이 없다"</p><p class="alt">20분을 10분씩 두 번으로 나눈다.</p></div>
+    <div class="card"><p class="say">"귀찮다"</p><p class="alt">운동복을 미리 꺼내 두고, 매트를 펴 둔다.</p></div>
+    <div class="card step"><p class="say">"자꾸 잊어버린다"</p><p class="alt">같은 시각에 알람, 저녁 먹기 전으로 고정한다.</p></div>
+    <div class="card step"><p class="say">"층간소음이 걱정된다"</p><p class="alt">점프 대신 한 발씩 딛는 버피, 매트 깔기.</p></div>
+  </div>
+  <p class="note-line">위 두 개는 수업 자료의 예, 아래 두 개는 덧붙인 예입니다. 내 상황에 맞는 방해 요인 하나와 대안 하나를 계획서에 적습니다.</p>
+  <aside class="notes"><p>미리 정한 대안이 실천율을 바꿉니다. 학생 몇 명에게 자기 방해 요인을 말하게 하고, 반 전체가 대안을 같이 찾아 주면 좋습니다.</p></aside>
+</section>
+
+<!-- 13 -->
+<section class="slide" data-sec="5 방해 요인">
+  <header class="sh rise"><div class="row"><span class="sec"><b>6</b>다음 시간부터 — 실천 일지</span><span class="ws">학습지 바</span></div><h2>5회 기록하면 4주가 보인다</h2></header>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>날짜</th><th>한 동작</th><th>시간</th><th>RPE</th><th>지켰나</th><th>한 줄 소감</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">3/4 (월)</td><td>스쿼트·마운틴 클라이머·플랭크</td><td class="mono">22분</td><td class="mono">6</td><td>○</td><td>플랭크 35초 성공</td></tr>
+        <tr><td class="mono">3/6 (수)</td><td>스쿼트·크런치·플랭크</td><td class="mono">10분 + 10분</td><td class="mono">7</td><td>△</td><td>학원 때문에 나눠서 함</td></tr>
+        <tr class="step"><td class="mono">3/8 (금)</td><td colspan="5" class="muted">여기부터 내가 채우기</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tiny">기록 예시입니다. "지켰나"는 계획대로면 ○, 일부만 했으면 △, 못 했으면 ×.</p>
+  <aside class="notes"><p>다음 시간부터 실천 일지를 매 수업 첫 5분에 확인하겠다고 예고하세요. △도 괜찮다는 점을 강조합니다. 0보다 나은 10분입니다.</p></aside>
+</section>
+
+<!-- 14 -->
+<section class="slide end-slide" data-sec="마무리" data-label="오늘의 정리">
+  <header class="sh rise"><div class="row"><span class="sec"><b>✓</b>오늘의 정리</span><span class="ws" style="border-color:var(--sun);color:var(--sun)">계획서 서명</span></div><h2>계획서를 완성하고 서명하면 오늘 수업 끝입니다</h2></header>
+  <div class="split even">
+    <div class="card"><h4>스스로 점검</h4>
+      <ul class="checklist">
+        <li><label><input type="checkbox" id="ck-e1"> 내 약한 체력 요소를 안다</label></li>
+        <li><label><input type="checkbox" id="ck-e2"> FITT 네 칸을 채웠다</label></li>
+        <li><label><input type="checkbox" id="ck-e3"> 측정 가능한 목표를 세웠다</label></li>
+      </ul>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;justify-content:flex-end">
+      <p class="big">"시간이 없다"면 10분씩 두 번. 미리 정한 대안이 실천을 바꾼다.</p>
+      <label class="sign" for="sig">나는 이 계획을 4주 동안 실천합니다. <input id="sig" type="text" placeholder="이름" autocomplete="off"></label>
+      <p class="next">다음 시간부터 : 학습지 바 — 실천 일지 5회 기록 시작 · <a href="index.html">강의 목록으로 →</a></p>
+    </div>
+  </div>
+  <aside class="notes"><p>서명란까지 채우게 하는 것이 심리적으로 효과가 큽니다.</p><p>다음 시간부터 실천 일지를 매 수업 첫 5분에 확인하겠다고 예고하세요.</p></aside>
+</section>
+
+</div></main>
+<script src="deck.js"></script>
+<script>
+(function () {
+  /* 7장 RPE */
+  const RPE = [
+    [1, '아주 쉬움', '누워 있는 것과 비슷하다.'], [2, '아주 쉬움', '천천히 걷는 정도.'],
+    [3, '가볍다', '편하게 노래도 부를 수 있다.'], [4, '가볍다', '몸이 데워지기 시작한다.'],
+    [5, '조금 힘들다', '숨이 차기 시작하지만 문장으로 말할 수 있다. 홈트 적정.'],
+    [6, '조금 힘들다', '땀이 나고, 짧은 대화는 가능하다. 홈트 적정.'],
+    [7, '많이 힘들다', '단어 몇 개만 겨우 말할 수 있다. 홈트 적정의 위쪽 끝.'],
+    [8, '많이 힘들다', '오래 버티기 어렵다. 가끔은 괜찮지만 매번은 무리.'],
+    [9, '한계', '거의 끝까지 짜냈다. 매번 이렇게 하면 회복이 안 된다.'],
+    [10, '한계', '더는 한 번도 못 한다.']
+  ];
+  const COL = ['#9FD6C9', '#9FD6C9', '#6CC3B4', '#6CC3B4', '#15A99B', '#15A99B', '#F4B942', '#F4B942', '#EE7B5C', '#E94F37'];
+  const rpe = document.getElementById('rpe');
+  rpe.innerHTML = RPE.map((r, i) => '<button type="button" data-i="' + i + '" style="background:' + COL[i] + '" aria-label="RPE ' + r[0] + '">' + r[0] + '</button>').join('');
+  rpe.addEventListener('click', e => {
+    const b = e.target.closest('[data-i]'); if (!b) return;
+    const r = RPE[+b.dataset.i];
+    rpe.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+    const fit = r[0] >= 5 && r[0] <= 7;
+    document.getElementById('rpeOut').innerHTML = '<p><strong>RPE ' + r[0] + ' · ' + r[1] + '</strong> — ' + r[2] + '</p>' +
+      (fit ? '<p class="small teal" style="margin-top:6px;font-weight:700">이 강도로 계획을 세우면 됩니다.</p>' : '');
+  });
+
+  /* 8장 FITT 설계기 */
+  const S = { weak: 'str', f: 7, i: 9, t: 60, typ: new Set(['str']) };
+  const DAYS = ['월', '화', '수', '목', '금', '토', '일'];
+  const PLAN = { 1: [2], 2: [1, 4], 3: [0, 2, 4], 4: [0, 1, 3, 4], 5: [0, 1, 2, 4, 5], 6: [0, 1, 2, 3, 4, 5], 7: [0, 1, 2, 3, 4, 5, 6] };
+  const WEAK = { str: ['근력', 'str', '스쿼트·덤벨컬·사이드 래터럴 레이즈'], end: ['근지구력', 'str', '플랭크·크런치·무릎 싯업'], car: ['심폐지구력', 'car', '버피테스트·마운틴 클라이머'], flx: ['유연성', 'flx', '준비·정리운동 스트레칭을 10분으로'] };
+  const TN = { str: '근력', car: '심폐', flx: '유연성' };
+  function judge() {
+    const out = [];
+    if (S.f <= 2) out.push(['F', 'b', '주 2회 이하는 효과가 잘 안 납니다. 주 3회 이상으로.']);
+    else if (S.f <= 5) out.push(['F', 'g', '주 ' + S.f + '회 — 초과회복 시점에 다시 자극할 수 있어요.']);
+    else out.push(['F', 'w', '같은 부위를 매일 하면 회복할 틈이 없어요. 줄이거나 상체·하체를 번갈아 짜세요.']);
+    if (S.i <= 4) out.push(['I', 'w', 'RPE ' + S.i + '는 너무 쉬워 자극이 부족해요.']);
+    else if (S.i <= 7) out.push(['I', 'g', 'RPE ' + S.i + ' — 숨은 차지만 짧은 대화는 가능한 강도예요.']);
+    else if (S.i === 8) out.push(['I', 'w', 'RPE 8은 가끔은 괜찮지만 매번은 무리예요.']);
+    else out.push(['I', 'b', '매번 RPE ' + S.i + '로 하면 회복이 안 되어 오히려 체력이 떨어져요.']);
+    if (S.t < 20) out.push(['T', 'w', '1회 20분 이상을 권해요. 짧게 자주라면 10분씩 두 번도 좋아요.']);
+    else if (S.t <= 45) out.push(['T', 'g', '1회 ' + S.t + '분 — 지킬 수 있는 시간이에요.']);
+    else out.push(['T', 'w', '처음 4주 계획으로는 길어요. 지킬 수 있는 시간부터 시작해요.']);
+    const w = WEAK[S.weak];
+    if (!S.typ.size) out.push(['T', 'b', '운동 형태를 하나 이상 골라 주세요.']);
+    else if (!S.typ.has(w[1])) out.push(['T', 'b', '약한 체력 요소(' + w[0] + ')를 위한 운동이 빠졌어요.']);
+    else if (!(S.typ.has('str') && S.typ.has('car'))) out.push(['T', 'w', '근력과 심폐를 섞으면 더 좋아요.']);
+    else out.push(['T', 'g', [...S.typ].map(k => TN[k]).join(' + ') + ' — 약한 ' + w[0] + '까지 챙겼어요.']);
+    return out;
+  }
+  function render() {
+    document.getElementById('fV').textContent = '주 ' + S.f + '회';
+    document.getElementById('iV').textContent = 'RPE ' + S.i;
+    document.getElementById('tV').textContent = S.t + '분';
+    const on = PLAN[S.f];
+    document.getElementById('week').innerHTML = DAYS.map((d, i) => on.includes(i) ? '<div class="on"><b>' + d + '</b>' + S.t + '분</div>' : '<div><b>' + d + '</b>회복</div>').join('');
+    const j = judge();
+    document.getElementById('rows4').innerHTML = j.map(r => '<div class="r"><span class="L ' + r[1] + '">' + r[0] + '</span><span>' + r[2] + '</span></div>').join('');
+    const allGood = j.every(r => r[1] === 'g');
+    const w = WEAK[S.weak];
+    document.getElementById('rxLine').innerHTML = (allGood ? '완성! ' : '처방 초안 · ') + '주 ' + S.f + '회 · RPE ' + S.i + ' · 1회 ' + S.t + '분 · ' + ([...S.typ].map(k => TN[k]).join(' + ') || '형태 없음') +
+      '<br><span style="color:var(--lab-ink);font-weight:500">추천 동작 (' + w[0] + ') — ' + w[2] + ' · 주간 합계 ' + (S.f * S.t) + '분</span>';
+  }
+  document.getElementById('weak').addEventListener('click', e => { const b = e.target.closest('[data-v]'); if (!b) return; S.weak = b.dataset.v; document.querySelectorAll('#weak .btn').forEach(x => x.classList.toggle('on', x === b)); render(); });
+  document.getElementById('typ').addEventListener('click', e => { const b = e.target.closest('[data-v]'); if (!b) return; const v = b.dataset.v; if (S.typ.has(v)) S.typ.delete(v); else S.typ.add(v); b.classList.toggle('on', S.typ.has(v)); render(); });
+  [['fR', 'f'], ['iR', 'i'], ['tR', 't']].forEach(([id, k]) => document.getElementById(id).addEventListener('input', e => { S[k] = +e.target.value; render(); }));
+  render();
+
+  /* 11장 목표 만들기 */
+  const gMove = document.getElementById('gMove'), gNow = document.getElementById('gNow'), gGoal = document.getElementById('gGoal'), gUnit = document.getElementById('gUnit');
+  const UNIT = { '플랭크': '초', '마운틴 클라이머': '초' };
+  gMove.addEventListener('change', () => { gUnit.value = UNIT[gMove.value] || '회'; goal(); });
+  function goal() {
+    const u = gUnit.value; document.getElementById('gUnit2').textContent = u;
+    const n = +gNow.value, g = +gGoal.value;
+    document.getElementById('gSent').textContent = '4주 뒤 ' + gMove.value + ' ' + (n || '?') + u + ' → ' + (g || '?') + u;
+    const c = [];
+    c.push(n > 0 && g > 0 ? ['ok', '숫자로 확인할 수 있다'] : ['no', '지금 기록과 목표를 숫자로 적어 주세요']);
+    c.push(['ok', '기한이 있다 (4주)']);
+    if (n > 0 && g > 0) {
+      if (g <= n) c.push(['no', '지금보다 높은 목표를 세워 주세요']);
+      else if (g / n > 2.01) c.push(['no', '지금의 ' + (g / n).toFixed(1) + '배 — 4주 안에 지키기 어려워요. 두 배 이내로']);
+      else c.push(['ok', '지킬 수 있는 크기 (지금의 ' + (g / n).toFixed(1) + '배)']);
+    }
+    document.getElementById('goalChecks').innerHTML = c.map(x => '<li class="' + x[0] + '">' + x[1] + '</li>').join('');
+  }
+  [gNow, gGoal, gUnit].forEach(el => el.addEventListener('input', goal));
+  goal();
+})();
+</script>
+</body>
+</html>
